@@ -1,5 +1,10 @@
 package br.com.omnilink.desafio.enums.vehicle;
 
+import lombok.Getter;
+
+import java.util.Arrays;
+
+@Getter
 public enum VehicleStatus {
     CIRCULATING(1, "Circulando"),
     ACCIDENT(2, "Acidente"),
@@ -10,12 +15,18 @@ public enum VehicleStatus {
     PUBLIC_TRANSPORTATION(7, "Transporte Público"),
     OUT_OF_USE(8, "Fora de Uso ou Recuperação");
 
-    private final int value;
-    private final String translation;
+    private final Integer idStatus;
+    private final String translationPortuguese;
 
-    VehicleStatus(int value, String translation) {
-        this.value = value;
-        this.translation = translation;
+    VehicleStatus(int idStatus, String translationPortuguese) {
+        this.idStatus = idStatus;
+        this.translationPortuguese = translationPortuguese;
     }
 
+    public static VehicleStatus fromIdStatus(Integer idStatus) {
+        return Arrays.stream(values())
+                .filter(vehicleStatus -> vehicleStatus.idStatus.equals(idStatus))
+                .findFirst()
+                .orElseThrow();
+    }
 }

@@ -3,6 +3,7 @@ package br.com.omnilink.desafio.model;
 import br.com.omnilink.desafio.enums.vehicle.VehicleBrand;
 import br.com.omnilink.desafio.enums.vehicle.VehicleCategory;
 import br.com.omnilink.desafio.enums.vehicle.VehicleFuelType;
+import br.com.omnilink.desafio.enums.vehicle.VehicleStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -49,6 +50,8 @@ public class Vehicle {
     @Enumerated(EnumType.STRING)
     private VehicleFuelType fuelType;
 
-    // Other fields and getters/setters
+    @Column(name = "status")
+    @Enumerated(EnumType.STRING)
+    private VehicleStatus status;
 }
 
