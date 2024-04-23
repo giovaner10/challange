@@ -7,6 +7,7 @@ import br.com.omnilink.desafio.enums.vehicle.VehicleStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Entity
@@ -17,41 +18,47 @@ import java.time.LocalDate;
 @Builder
 @EqualsAndHashCode(of = "id")
 @ToString(of = "id")
-public class Vehicle {
+public class Vehicle implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "model")
+    @Column(name = "plate", unique = true, nullable = false)
+    private String plate;
+
+    @Column(name = "model", nullable = false)
     private String model;
 
-    @Column(name = "model_year")
-    private int modelYear;
+    @Column(name = "model_year", nullable = false)
+    private Integer modelYear;
 
-    @Column(name = "city")
+    @Column(name = "city", nullable = false)
     private String city;
 
-    @Column(name = "state")
+    @Column(name = "state", nullable = false)
     private String state;
 
-    @Column(name = "registration_date")
+    @Column(name = "registration_date", nullable = false)
     private LocalDate registrationDate;
 
-    @Column(name = "brand")
+    @Column(name = "brand", nullable = false)
     @Enumerated(EnumType.STRING)
     private VehicleBrand brand;
 
-    @Column(name = "category")
+    @Column(name = "category", nullable = false)
     @Enumerated(EnumType.STRING)
     private VehicleCategory category;
 
-    @Column(name = "fuel_type")
+    @Column(name = "fuel_type", nullable = false)
     @Enumerated(EnumType.STRING)
     private VehicleFuelType fuelType;
 
-    @Column(name = "status")
+    @Column(name = "status", nullable = false)
     @Enumerated(EnumType.STRING)
     private VehicleStatus status;
-}
 
+    @Column(name = "costumer", nullable = false)
+    @JoinColumn(name = "costumer_id")
+    private Costumer costumer;
+}
