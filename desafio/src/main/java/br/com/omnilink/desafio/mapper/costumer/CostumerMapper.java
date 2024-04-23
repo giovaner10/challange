@@ -7,9 +7,9 @@ public class CostumerMapper {
 
     public static Costumer Costumer(CostumerRequestCreat request){
         return Costumer.builder()
-                .name(request.getName())
-                .cnpj(request.getCnpj())
-                .email(request.getEmail())
+                .name(request.name())
+                .cnpj(request.cnpj())
+                .email(request.email())
                 .build();
     }
 }

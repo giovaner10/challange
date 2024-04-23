@@ -10,21 +10,9 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.br.CNPJ;
 
-@Getter
-@Setter
-public class CostumerRequestCreat {
-
-    @NotBlank
-    private String name;
-
-    @NotBlank
-    @CNPJ
-    private String cnpj;
-
-    @NotBlank
-    @Email
-    private String email;
-
-    @NotBlank
-    private Integer costumerType;
-}
+public record CostumerRequestCreat(
+        @NotBlank String name,
+        @NotBlank @CNPJ String cnpj,
+        @NotBlank @Email String email,
+        @NotBlank Integer costumerType
+) {}

@@ -1,6 +1,7 @@
 package br.com.omnilink.desafio.model;
 
 import br.com.omnilink.desafio.enums.customer.CostumerType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,7 +20,7 @@ public class Costumer implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -34,6 +35,7 @@ public class Costumer implements Serializable {
     @Enumerated(EnumType.STRING)
     private CostumerType costumerType;
 
-    @OneToMany(mappedBy = "costumer", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "costumer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
     private Set<Vehicle> vehicles;
 }
