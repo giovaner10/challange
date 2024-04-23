@@ -24,7 +24,7 @@ public class Costumer implements Serializable {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "cnpj", unique = true, nullable = false)
+    @Column(name = "cpf_cnpj", unique = true, nullable = false)
     private String cnpj;
 
     @Column(name = "email", unique = true, nullable = false)
