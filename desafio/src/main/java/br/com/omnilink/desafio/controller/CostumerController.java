@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/amizades")
+@RequestMapping("/costumer")
 public class CostumerController {
 
     @Autowired
     CostumerRepositoryImpl costumerRepository;
 
-    @PostMapping("/ola")
-    public void hello(@RequestBody Costumer costumer){
+    @PostMapping("/")
+    public void save(@RequestBody Costumer costumer){
         costumerRepository.save(costumer);
     }
 }
