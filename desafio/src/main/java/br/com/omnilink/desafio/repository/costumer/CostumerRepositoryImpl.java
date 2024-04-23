@@ -1,4 +1,4 @@
-package br.com.omnilink.desafio.repository;
+package br.com.omnilink.desafio.repository.costumer;
 
 import br.com.omnilink.desafio.model.Costumer;
 import org.hibernate.Session;
@@ -6,17 +6,28 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.hibernate.cfg.Configuration;
+
+import java.util.List;
 
 
 @Repository
-public class CostumerRepositoryImpl {
+public class CostumerRepositoryImpl implements ICostumerRepository {
 
     @Autowired
     private  SessionFactory sessionFactory;
 
 
+    @Override
+    public Costumer findById(long id) {
+        return null;
+    }
 
+    @Override
+    public List<Costumer> findAll() {
+        return List.of();
+    }
+
+    @Override
     public void save(Costumer entity) {
         Session session = sessionFactory.openSession();
         Transaction transaction = null;
@@ -34,5 +45,14 @@ public class CostumerRepositoryImpl {
         }
     }
 
-    // You can add other CRUD methods here
+    @Override
+    public void update(Costumer user) {
+
+    }
+
+    @Override
+    public void delete(Costumer user) {
+
+    }
+
 }
