@@ -11,12 +11,12 @@ import org.slf4j.LoggerFactory;
 @SpringBootApplication
 @EnableCaching
 public class DesafioApplication {
-	private static final Logger logger = LoggerFactory.getLogger(DesafioApplication.class);
+///	private static final Logger logger = LoggerFactory.getLogger(DesafioApplication.class);
 
 	public static void main(String[] args) {
-		logger.info("Iniciando a api!");
+	//	logger.info("Iniciando a api!");
 		SpringApplication.run(DesafioApplication.class, args);
-		logger.info("API iniciada e pronta para receber requisições!");
+	//	logger.info("API iniciada e pronta para receber requisições!");
 
 	}
 

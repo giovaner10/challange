@@ -1,6 +1,2 @@
-23-04-2024 21:29:02.852 | 761  | [main] | INFO  | b.c.o.desafio.DesafioApplication - Iniciando a api!
-23-04-2024 21:29:04.152 | 2061 | [main] | INFO  | b.c.o.desafio.DesafioApplication - Starting DesafioApplication using Java 17.0.7 with PID 10336 (C:\Users\giovane\Downloads\desafion\desafio\target\classes started by giovane in C:\Users\giovane\Downloads\desafion)
-23-04-2024 21:29:04.155 | 2064 | [main] | INFO  | b.c.o.desafio.DesafioApplication - No active profile set, falling back to 1 default profile: "default"
-23-04-2024 21:29:23.834 | 21743 | [main] | INFO  | b.c.o.desafio.DesafioApplication - Started DesafioApplication in 20.654 seconds (process running for 22.345)
-23-04-2024 21:29:23.960 | 21869 | [main] | INFO  | b.c.o.desafio.DesafioApplication - API iniciada e pronta para receber requisições!
-23-04-2024 21:29:41.564 | 39473 | [http-nio-8080-exec-1] | INFO  | b.c.o.desafio.DesafioApplication - Listando tudo!
+24-04-2024 14:47:19.070 | 502  | [main] | INFO  | b.c.o.desafio.DesafioApplication - Starting DesafioApplication using Java 17.0.11 with PID 17588 (C:\Users\giovane.tiburcio\Desktop\p\desafio\target\classes started by giovane.tiburcio in C:\Users\giovane.tiburcio\Desktop\p)
+24-04-2024 14:47:19.071 | 503  | [main] | INFO  | b.c.o.desafio.DesafioApplication - No active profile set, falling back to 1 default profile: "default"
