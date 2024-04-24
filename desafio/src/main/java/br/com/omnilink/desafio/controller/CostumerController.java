@@ -1,7 +1,10 @@
 package br.com.omnilink.desafio.controller;
 
+import br.com.omnilink.desafio.DesafioApplication;
 import br.com.omnilink.desafio.model.Costumer;
 import br.com.omnilink.desafio.repository.costumer.CostumerRepositoryImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
@@ -12,6 +15,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/costumer")
 public class CostumerController {
+    private static final Logger logger = LoggerFactory.getLogger(DesafioApplication.class);
+
 
     @Autowired
     CostumerRepositoryImpl costumerRepository;
@@ -26,6 +31,7 @@ public class CostumerController {
     @ResponseStatus(HttpStatus.OK)
     @Cacheable("findAll")
     public List<Costumer> findAll() {
+        logger.info("Listando tudo!");
         return costumerRepository.findAll();
     }
 
