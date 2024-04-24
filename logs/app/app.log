@@ -1,0 +1,2 @@
+24-04-2024 14:47:19.070 | 502  | [main] | INFO  | b.c.o.desafio.DesafioApplication - Starting DesafioApplication using Java 17.0.11 with PID 17588 (C:\Users\giovane.tiburcio\Desktop\p\desafio\target\classes started by giovane.tiburcio in C:\Users\giovane.tiburcio\Desktop\p)
+24-04-2024 14:47:19.071 | 503  | [main] | INFO  | b.c.o.desafio.DesafioApplication - No active profile set, falling back to 1 default profile: "default"
