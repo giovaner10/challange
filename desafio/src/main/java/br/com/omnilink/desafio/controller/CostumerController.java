@@ -38,7 +38,7 @@ public class CostumerController {
     @PutMapping("/update/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void update(@PathVariable Integer id, @RequestBody Costumer costumer) {
-       // costumer.setId(id);
+        costumer.setId(id);
         costumerRepository.update(costumer);
     }
 
