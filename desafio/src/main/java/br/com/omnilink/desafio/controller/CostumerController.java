@@ -1,10 +1,10 @@
 package br.com.omnilink.desafio.controller;
 
-import br.com.omnilink.desafio.DesafioApplication;
+import br.com.omnilink.desafio.DTO.request.costumer.CostumerRequestCreat;
+import br.com.omnilink.desafio.DTO.response.CostumerResponse;
 import br.com.omnilink.desafio.model.Costumer;
-import br.com.omnilink.desafio.repository.costumer.CostumerRepositoryImpl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import br.com.omnilink.desafio.service.CostumerService;
+import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
@@ -15,43 +15,39 @@ import java.util.List;
 @RestController
 @RequestMapping("/costumer")
 public class CostumerController {
-    private static final Logger logger = LoggerFactory.getLogger(DesafioApplication.class);
-
-
     @Autowired
-    CostumerRepositoryImpl costumerRepository;
-
+    CostumerService costumerRepository;
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public void save(@RequestBody Costumer costumer) {
-        costumerRepository.save(costumer);
+    public void save(@RequestBody CostumerRequestCreat request) throws BadRequestException {
+        costumerRepository.save(request);
     }
 
     @GetMapping("/findall")
     @ResponseStatus(HttpStatus.OK)
     @Cacheable("findAll")
-    public List<Costumer> findAll() {
-        logger.info("Listando tudo!");
+    public List<CostumerResponse> findAll() {
+        //logger.info("Listando tudo!");
         return costumerRepository.findAll();
     }
 
     @PutMapping("/update/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void update(@PathVariable Integer id, @RequestBody Costumer costumer) {
-        costumer.setId(id);
-        costumerRepository.update(costumer);
+    public void update(@PathVariable Integer id, @RequestBody CostumerRequestCreat request) throws BadRequestException {
+
+        costumerRepository.update(request, id);
     }
 
     @GetMapping("/finbyid/{id}")
     @ResponseStatus(HttpStatus.OK)
     @Cacheable("findById")
-    public Costumer findById(@PathVariable Integer id) {
-        return costumerRepository.findById(id);
+    public Costumer findById(@PathVariable Integer id) throws BadRequestException {
+        return costumerRepository.findByIdOrThrowObjectNotFoundException(id);
     }
 
     @DeleteMapping("/delete/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void delete(@PathVariable Integer id) {
-        costumerRepository.delete(costumerRepository.findById(id));
+    public void delete(@PathVariable Integer id) throws BadRequestException {
+        costumerRepository.delete(id);
     }
 }

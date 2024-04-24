@@ -1,23 +1,16 @@
 package br.com.omnilink.desafio.exception;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
-@Getter
-@Setter
-@Builder
-@JsonInclude(JsonInclude.Include.NON_NULL)
+@Data
+@SuperBuilder
 public class ExceptionDetails {
-
-    private String title;
-    private int status;
-    private String message;
-    private LocalDateTime timestamp;
-    private String path;
-    private List<String> fields;
+    protected String title;
+    protected int status;
+    protected String details;
+    protected String developerMessage;
+    protected LocalDateTime timestamp;
 }
