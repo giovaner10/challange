@@ -8,7 +8,10 @@ import org.hibernate.validator.constraints.br.CNPJ;
 @Builder
 public record CostumerRequestCreat(
         @NotBlank String name,
+
         @NotBlank @CNPJ String cnpj,
+
         @NotBlank @Email String email,
+
         @NotBlank Integer costumerType
 ) {}
