@@ -36,6 +36,18 @@ public class RestExceptionHandler {
                         .build(), HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(TypetNotFoundException.class)
+    public ResponseEntity<BadRequestExceptionDetails> handleTypetNotFoundException(ObjectNotFoundException onfe) {
+        return new ResponseEntity<>(
+                BadRequestExceptionDetails.builder()
+                        .timestamp(LocalDateTime.now())
+                        .status(HttpStatus.BAD_REQUEST.value())
+                        .title("Not Found Exception, Check the Documentation")
+                        .details(onfe.getMessage())
+                        .developerMessage(onfe.getClass().getName())
+                        .build(), HttpStatus.BAD_REQUEST);
+    }
+
 //    @Override
 //    protected ResponseEntity<Object> handleMethodArgumentNotValid(
 //            MethodArgumentNotValidException exception, HttpHeaders headers, HttpStatus status, WebRequest request) {

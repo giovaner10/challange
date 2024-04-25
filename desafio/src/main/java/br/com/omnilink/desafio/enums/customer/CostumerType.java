@@ -1,5 +1,6 @@
 package br.com.omnilink.desafio.enums.customer;
 
+import br.com.omnilink.desafio.exception.TypetNotFoundException;
 import lombok.Getter;
 
 import java.util.Arrays;
@@ -26,6 +27,6 @@ public enum CostumerType {
         return Arrays.stream(values())
                 .filter(costumerType -> costumerType.idCostumerType.equals(idCostumerType))
                 .findFirst()
-                .orElseThrow();
+                .orElseThrow(() -> new TypetNotFoundException("Invalid code CostumerType"));
     }
 }

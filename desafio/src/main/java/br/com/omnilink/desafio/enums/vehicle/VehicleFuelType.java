@@ -1,5 +1,6 @@
 package br.com.omnilink.desafio.enums.vehicle;
 
+import br.com.omnilink.desafio.exception.TypetNotFoundException;
 import lombok.Getter;
 
 import java.util.Arrays;
@@ -25,6 +26,6 @@ public enum VehicleFuelType {
         return Arrays.stream(values())
                 .filter(vehicleFuelType -> vehicleFuelType.idFuelType.equals(idFuelType))
                 .findFirst()
-                .orElseThrow();
+                .orElseThrow(() -> new TypetNotFoundException("Invalid code VehicleFuelType"));
     }
 }

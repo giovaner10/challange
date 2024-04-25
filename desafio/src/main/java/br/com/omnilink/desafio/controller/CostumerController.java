@@ -4,6 +4,7 @@ import br.com.omnilink.desafio.DTO.request.costumer.CostumerRequestCreat;
 import br.com.omnilink.desafio.DTO.response.CostumerResponse;
 import br.com.omnilink.desafio.model.Costumer;
 import br.com.omnilink.desafio.service.CostumerService;
+import jakarta.validation.Valid;
 import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -33,7 +34,7 @@ public class CostumerController {
 
     @PutMapping("/update/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void update(@PathVariable Integer id, @RequestBody CostumerRequestCreat request) throws BadRequestException {
+    public void update(@PathVariable Integer id, @Valid @RequestBody CostumerRequestCreat request) throws BadRequestException {
 
         costumerRepository.update(request, id);
     }

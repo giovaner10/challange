@@ -36,7 +36,8 @@ public class Costumer implements Serializable {
     @Enumerated(EnumType.STRING)
     private CostumerType costumerType;
 
-    @OneToMany(mappedBy = "costumer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonIgnore
-    private Set<Vehicle> vehicles;
+//    @OneToMany(mappedBy = "costumer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    @JsonIgnore
+//    private Set<Vehicle> vehicles;
+//}
 }

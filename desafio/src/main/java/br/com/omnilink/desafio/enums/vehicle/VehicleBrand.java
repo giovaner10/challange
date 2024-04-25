@@ -1,5 +1,7 @@
 package br.com.omnilink.desafio.enums.vehicle;
 
+import br.com.omnilink.desafio.exception.TypetNotFoundException;
+
 import java.util.Arrays;
 
 public enum VehicleBrand {
@@ -76,7 +78,7 @@ public enum VehicleBrand {
         return Arrays.stream(values())
                 .filter(vehicleBrand -> vehicleBrand.idBrand.equals(idBrand))
                 .findFirst()
-                .orElseThrow();
+                .orElseThrow(() -> new TypetNotFoundException("Invalid code VehicleBrand"));
     }
 
 }

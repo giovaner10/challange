@@ -1,5 +1,6 @@
 package br.com.omnilink.desafio.enums.vehicle;
 
+import br.com.omnilink.desafio.exception.TypetNotFoundException;
 import lombok.Getter;
 
 import java.util.Arrays;
@@ -27,6 +28,6 @@ public enum VehicleCategory {
        return Arrays.stream(values())
                 .filter(vehicleCategory -> vehicleCategory.idCategory.equals(idCategory))
                 .findFirst()
-                .orElseThrow();
+               .orElseThrow(() -> new TypetNotFoundException("Invalid code VehicleCategory"));
     }
 }

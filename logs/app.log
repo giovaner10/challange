@@ -5,3 +5,10 @@
 2024-04-24 21:31:46.697 [main] INFO  b.c.o.desafio.DesafioApplication - Starting DesafioApplication using Java 17.0.7 with PID 12564 (C:\Users\giovane\Downloads\desafion\desafio\target\classes started by giovane in C:\Users\giovane\Downloads\desafion)
 2024-04-24 21:31:46.703 [main] INFO  b.c.o.desafio.DesafioApplication - No active profile set, falling back to 1 default profile: "default"
 2024-04-24 21:32:01.524 [main] INFO  b.c.o.desafio.DesafioApplication - Started DesafioApplication in 15.645 seconds (process running for 16.893)
+2024-04-25 07:41:22.002 [main] INFO  b.c.o.desafio.DesafioApplication - Starting DesafioApplication using Java 17.0.11 with PID 18836 (C:\Users\giovane.tiburcio\Desktop\p\desafio\target\classes started by giovane.tiburcio in C:\Users\giovane.tiburcio\Desktop\p)
+2024-04-25 07:41:22.004 [main] INFO  b.c.o.desafio.DesafioApplication - No active profile set, falling back to 1 default profile: "default"
+2024-04-25 07:41:29.292 [main] INFO  b.c.o.desafio.DesafioApplication - Started DesafioApplication in 7.567 seconds (process running for 8.096)
+2024-04-25 07:43:14.542 [http-nio-8080-exec-4] INFO  b.c.o.d.service.CostumerService - Listando tudo.
+2024-04-25 07:46:31.275 [main] INFO  b.c.o.desafio.DesafioApplication - Starting DesafioApplication using Java 17.0.11 with PID 5180 (C:\Users\giovane.tiburcio\Desktop\p\desafio\target\classes started by giovane.tiburcio in C:\Users\giovane.tiburcio\Desktop\p)
+2024-04-25 07:46:31.278 [main] INFO  b.c.o.desafio.DesafioApplication - No active profile set, falling back to 1 default profile: "default"
+2024-04-25 07:46:37.825 [main] INFO  b.c.o.desafio.DesafioApplication - Started DesafioApplication in 6.852 seconds (process running for 7.311)
