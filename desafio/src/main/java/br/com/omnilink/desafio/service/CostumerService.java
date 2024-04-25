@@ -7,6 +7,8 @@ import br.com.omnilink.desafio.mapper.costumer.CostumerMapper;
 import br.com.omnilink.desafio.model.Costumer;
 import br.com.omnilink.desafio.repository.costumer.CostumerRepositoryImpl;
 import org.apache.coyote.BadRequestException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +21,7 @@ public class CostumerService {
     @Autowired
     CostumerRepositoryImpl costumerRepository;
 
+    private static final Logger logger = LoggerFactory.getLogger(CostumerService.class);
     public Costumer findByIdOrThrowObjectNotFoundException(Integer id) throws BadRequestException {
 
         return costumerRepository.findById(id)
@@ -30,6 +33,7 @@ public class CostumerService {
     }
 
     public List<CostumerResponse> findAll() {
+        logger.info("Listando tudo.");
 
         return costumerRepository.findAll()
                 .stream()

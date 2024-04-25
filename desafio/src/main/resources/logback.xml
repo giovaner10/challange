@@ -1,18 +1,29 @@
 <configuration>
 
-    <!-- Definindo padrões de formatação -->
+    <!-- Defina o padrão de formatação do log -->
     <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"/>
 
-    <!-- Configuração dos appenders -->
-    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <!-- Configure a saída do log para um arquivo -->
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/app.log</file> <!-- Defina o local do arquivo de log -->
         <encoder>
             <pattern>${LOG_PATTERN}</pattern>
         </encoder>
     </appender>
 
-    <!-- Definindo o root logger -->
+    <!-- Configure o nível de log para INFO (ou o nível desejado) -->
     <root level="INFO">
-        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+    <!-- Configure o logger para incluir apenas os logs específicos -->
+    <logger name="br.com.omnilink.desafio" level="INFO" additivity="false">
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <!-- Desative o logging para o root logger -->
+    <root level="OFF">
+        <appender-ref ref="FILE"/>
     </root>
 
 </configuration>
