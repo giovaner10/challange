@@ -1,14 +1,13 @@
 package br.com.omnilink.desafio.service;
 
-import br.com.omnilink.desafio.DTO.request.costumer.CostumerRequestCreat;
-import br.com.omnilink.desafio.DTO.response.CostumerResponse;
+import br.com.omnilink.desafio.DTO.request.vehicle.VehicleRequestCreat;
+import br.com.omnilink.desafio.DTO.response.vehicle.VehicleResponse;
 import br.com.omnilink.desafio.exception.ObjectNotFoundException;
-import br.com.omnilink.desafio.mapper.costumer.CostumerMapper;
+import br.com.omnilink.desafio.mapper.vehicle.VehicleMapper;
 import br.com.omnilink.desafio.model.Costumer;
-import br.com.omnilink.desafio.repository.costumer.CostumerRepositoryImpl;
+import br.com.omnilink.desafio.model.Vehicle;
+import br.com.omnilink.desafio.repository.vehicle.VehicleRepository;
 import org.apache.coyote.BadRequestException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,57 +18,64 @@ import java.util.List;
 public class VehicleService {
 
     @Autowired
-    CostumerRepositoryImpl costumerRepository;
+    VehicleRepository vehicleRepository;
 
-    private static final Logger logger = LoggerFactory.getLogger(VehicleService.class);
-    public Costumer findByIdOrThrowObjectNotFoundException(Integer id) throws BadRequestException {
+    @Autowired
+    CostumerService costumerService;
 
-        return costumerRepository.findById(id)
-                .orElseThrow(() -> new ObjectNotFoundException("Costumer not Found."));
+
+    // private static final Logger logger = LoggerFactory.getLogger(VehicleService.class);
+    public Vehicle findByIdOrThrowObjectNotFoundException(Integer id) throws BadRequestException {
+
+        return vehicleRepository.findById(id)
+                .orElseThrow(() -> new ObjectNotFoundException("Vehicle not Found."));
     }
 
-    private void existByEmailOrCnpj(String email, String cnpj) throws BadRequestException {
-        if (costumerRepository.existsByEmailOrCnpj(email, cnpj)) throw new BadRequestException("Costumer is present");
+    private void existByPlate(String plate) throws BadRequestException {
+        if (vehicleRepository.existsByPlate(plate)) throw new BadRequestException("Vehicle is present");
     }
 
-    public List<CostumerResponse> findAll() {
-        logger.info("Listando tudo.");
+    public List<VehicleResponse> findAll() {
+       // logger.info("Listando tudo.");
 
-        return costumerRepository.findAll()
+        return vehicleRepository.findAll()
                 .stream()
-                .map(CostumerMapper::toResponse)
+                .map(VehicleMapper::toResponse)
                 .toList();
     }
 
     @Transactional
-    public void save(CostumerRequestCreat request) throws BadRequestException {
+    public void save(VehicleRequestCreat request) throws BadRequestException {
 
-        existByEmailOrCnpj(request.email(), request.cnpj());
+        existByPlate(request.plate());
 
-        Costumer costumerSave = CostumerMapper.toEntity(request);
+        Costumer byId = costumerService.findByIdOrThrowObjectNotFoundException(request.costumerId());
 
-        costumerRepository.save(costumerSave);
+
+        Vehicle vehicleSave = VehicleMapper.toEntity(request, byId);
+
+        vehicleRepository.save(vehicleSave);
     }
 
     @Transactional
-    public void update(CostumerRequestCreat request, Integer id) throws BadRequestException {
+    public void update(VehicleRequestCreat request, Integer id) throws BadRequestException {
 
-        existByEmailOrCnpj(request.email(), request.cnpj());
+        existByPlate(request.plate());
 
-        findByIdOrThrowObjectNotFoundException(id);
+        Vehicle byId = findByIdOrThrowObjectNotFoundException(id);
 
-        Costumer costumerUpdate = CostumerMapper.toEntity(request);
+        Vehicle vehicleUpdate = VehicleMapper.toEntity(request, byId.getCostumer());
 
-        costumerUpdate.setId(id);
+        vehicleUpdate.setId(id);
 
-        costumerRepository.saveAndFlush(costumerUpdate);
+        vehicleRepository.saveAndFlush(vehicleUpdate);
     }
 
     @Transactional
     public void delete(Integer id) throws BadRequestException {
 
-        Costumer byId = findByIdOrThrowObjectNotFoundException(id);
+        Vehicle byId = findByIdOrThrowObjectNotFoundException(id);
 
-        costumerRepository.delete(byId);
+        vehicleRepository.delete(byId);
     }
 }

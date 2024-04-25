@@ -18,6 +18,7 @@ public class CostumerMapper {
 
     public static CostumerResponse toResponse(Costumer costumer) {
         return CostumerResponse.builder()
+                .id(costumer.getId())
                 .name(costumer.getName())
                 .cnpj(costumer.getCnpj())
                 .email(costumer.getEmail())

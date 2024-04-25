@@ -32,6 +32,7 @@ public class VehicleMapper {
 
     public static VehicleResponse toResponse(Vehicle vehicle) {
         return VehicleResponse.builder()
+                .id(vehicle.getId())
                 .plate(vehicle.getPlate())
                 .model(vehicle.getModel())
                 .modelYear(vehicle.getModelYear())
