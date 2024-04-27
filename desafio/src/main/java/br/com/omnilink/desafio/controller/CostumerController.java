@@ -18,6 +18,7 @@ import java.util.List;
 public class CostumerController {
     @Autowired
     CostumerService costumerRepository;
+
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public void save(@RequestBody CostumerRequestCreat request) throws BadRequestException {
@@ -26,7 +27,7 @@ public class CostumerController {
 
     @GetMapping("/findall")
     @ResponseStatus(HttpStatus.OK)
-    @Cacheable("findAll")
+   @Cacheable("findAll")
     public List<CostumerResponse> findAll() {
         //logger.info("Listando tudo!");
         return costumerRepository.findAll();

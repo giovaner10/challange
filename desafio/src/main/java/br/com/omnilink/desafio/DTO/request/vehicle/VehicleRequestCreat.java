@@ -2,6 +2,7 @@ package br.com.omnilink.desafio.DTO.request.vehicle;
 
 import br.com.omnilink.desafio.enums.vehicle.VehicleBrand;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 
 import java.time.LocalDate;
@@ -13,21 +14,22 @@ public record VehicleRequestCreat(
 
         @NotBlank String model,
 
-        @NotBlank Integer modelYear,
+        @NotNull Integer modelYear,
 
         @NotBlank String city,
 
         @NotBlank String state,
 
+
         @NotBlank String cep,
 
-        @NotBlank Integer brand,
+        @NotNull Integer brand,
 
-        @NotBlank Integer category,
+        @NotNull Integer category,
 
-        @NotBlank Integer fuelType,
+        @NotNull Integer fuelType,
 
-        @NotBlank Integer status,
+        @NotNull Integer status,
 
-        @NotBlank Integer costumerId
+        @NotNull Integer costumerId
 ) { }

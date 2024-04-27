@@ -1,5 +1,6 @@
 package br.com.omnilink.desafio.exception;
 
+import jakarta.validation.UnexpectedTypeException;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -45,6 +46,19 @@ public class RestExceptionHandler {
                         .title("Not Found Exception, Check the Documentation")
                         .details(onfe.getMessage())
                         .developerMessage(onfe.getClass().getName())
+                        .build(), HttpStatus.BAD_REQUEST);
+    }
+
+
+    @ExceptionHandler(UnexpectedTypeException.class)
+    public ResponseEntity<BadRequestExceptionDetails> handleTypetNotFoundException(UnexpectedTypeException ute) {
+        return new ResponseEntity<>(
+                BadRequestExceptionDetails.builder()
+                        .timestamp(LocalDateTime.now())
+                        .status(HttpStatus.BAD_REQUEST.value())
+                        .title("Bad fields.")
+                        .details(ute.getMessage())
+                        .developerMessage(ute.getLocalizedMessage())
                         .build(), HttpStatus.BAD_REQUEST);
     }
 
