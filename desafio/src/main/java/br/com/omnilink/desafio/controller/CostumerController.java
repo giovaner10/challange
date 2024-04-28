@@ -45,7 +45,7 @@ public class CostumerController {
     @ResponseStatus(HttpStatus.OK)
     @Cacheable("findById")
     public Costumer findById(@PathVariable Integer id) throws BadRequestException {
-        return costumerRepository.findByIdOrThrowObjectNotFoundException(id);
+        return costumerRepository.findById(id);
     }
 
     @DeleteMapping("/delete/{id}")

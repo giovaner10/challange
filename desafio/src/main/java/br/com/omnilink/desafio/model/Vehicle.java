@@ -5,10 +5,13 @@ import br.com.omnilink.desafio.enums.vehicle.VehicleCategory;
 import br.com.omnilink.desafio.enums.vehicle.VehicleFuelType;
 import br.com.omnilink.desafio.enums.vehicle.VehicleStatus;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Calendar;
 
 @Entity
 @Table(name = "vehicle")
@@ -31,6 +34,7 @@ public class Vehicle implements Serializable {
     private String model;
 
     @Column(name = "model_year", nullable = false)
+    @Min(1900)
     private Integer modelYear;
 
     @Column(name = "city", nullable = false)

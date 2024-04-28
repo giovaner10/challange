@@ -23,12 +23,10 @@ public class VehicleService {
     @Autowired
     CostumerService costumerService;
 
-
     // private static final Logger logger = LoggerFactory.getLogger(VehicleService.class);
-    public Vehicle findByIdOrThrowObjectNotFoundException(Integer id) throws BadRequestException {
+    public Vehicle findById(Integer id) throws BadRequestException {
 
-        return vehicleRepository.findById(id)
-                .orElseThrow(() -> new ObjectNotFoundException("Vehicle not Found."));
+        return this.findByIdOrThrowObjectNotFoundException(id);
     }
 
     private void existByPlate(String plate) throws BadRequestException {
@@ -44,13 +42,21 @@ public class VehicleService {
                 .toList();
     }
 
+    public List<VehicleResponse> findAllByCostumer(Integer id) {
+        // logger.info("Listando tudo.");
+
+        return vehicleRepository.findAllByCostumer(id)
+                .stream()
+                .map(VehicleMapper::toResponse)
+                .toList();
+    }
+
     @Transactional
     public void save(VehicleRequestCreat request) throws BadRequestException {
 
         existByPlate(request.plate());
 
         Costumer byId = costumerService.findByIdOrThrowObjectNotFoundException(request.costumerId());
-
 
         Vehicle vehicleSave = VehicleMapper.toEntity(request, byId);
 
@@ -77,5 +83,10 @@ public class VehicleService {
         Vehicle byId = findByIdOrThrowObjectNotFoundException(id);
 
         vehicleRepository.delete(byId);
+    }
+
+    private Vehicle findByIdOrThrowObjectNotFoundException(Integer id) throws BadRequestException {
+        return vehicleRepository.findById(id)
+                .orElseThrow(() -> new ObjectNotFoundException("Vehicle not Found."));
     }
 }

@@ -16,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/vehicle")
 public class VehicleController {
+
     @Autowired
     VehicleService vehicleService;
 
@@ -33,10 +34,17 @@ public class VehicleController {
         return vehicleService.findAll();
     }
 
+    @GetMapping("/findallByCostumer/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    @Cacheable("findAllVehicleByCostumer")
+    public List<VehicleResponse> findAllByCostumer(@PathVariable Integer id) {
+        //logger.info("Listando tudo!");
+        return vehicleService.findAllByCostumer(id);
+    }
+
     @PutMapping("/update/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void update(@PathVariable Integer id,@Valid @RequestBody VehicleRequestCreat request) throws BadRequestException {
-
         vehicleService.update(request, id);
     }
 
@@ -44,7 +52,7 @@ public class VehicleController {
     @ResponseStatus(HttpStatus.OK)
     @Cacheable("findByIdVehicle")
     public Vehicle findById(@PathVariable Integer id) throws BadRequestException {
-        return vehicleService.findByIdOrThrowObjectNotFoundException(id);
+        return vehicleService.findById(id);
     }
 
     @DeleteMapping("/delete/{id}")

@@ -22,10 +22,9 @@ public class CostumerService {
     CostumerRepositoryImpl costumerRepository;
 
    // private static final Logger logger = LoggerFactory.getLogger(CostumerService.class);
-    public Costumer findByIdOrThrowObjectNotFoundException(Integer id) throws BadRequestException {
+    public Costumer findById(Integer id) throws BadRequestException {
 
-        return costumerRepository.findById(id)
-                .orElseThrow(() -> new ObjectNotFoundException("Costumer not Found."));
+        return findByIdOrThrowObjectNotFoundException(id);
     }
 
     private void existByEmailOrCnpj(String email, String cnpj) throws BadRequestException {
@@ -71,5 +70,11 @@ public class CostumerService {
         Costumer byId = findByIdOrThrowObjectNotFoundException(id);
 
         costumerRepository.deleteById(byId.getId());
+    }
+
+    private Costumer findByIdOrThrowObjectNotFoundException(Integer id) throws BadRequestException {
+
+        return costumerRepository.findById(id)
+                .orElseThrow(() -> new ObjectNotFoundException("Costumer not Found."));
     }
 }
