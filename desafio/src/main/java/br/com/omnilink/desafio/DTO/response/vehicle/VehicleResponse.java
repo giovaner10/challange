@@ -3,6 +3,8 @@ package br.com.omnilink.desafio.DTO.response.vehicle;
 import br.com.omnilink.desafio.DTO.response.CostumerResponse;
 import lombok.Builder;
 
+import java.io.Serializable;
+
 @Builder
 public record VehicleResponse(
 
@@ -27,5 +29,5 @@ public record VehicleResponse(
         String status,
 
         CostumerResponse costumer
-) {
+) implements Serializable {
 }

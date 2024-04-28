@@ -58,7 +58,7 @@ public class Vehicle implements Serializable {
     @Enumerated(EnumType.STRING)
     private VehicleStatus status;
 
-    @Column(name = "costumer", nullable = false)
-    @JoinColumn(name = "costumer_id")
+    @ManyToOne
+    @JoinColumn(name = "costumer")
     private Costumer costumer;
 }

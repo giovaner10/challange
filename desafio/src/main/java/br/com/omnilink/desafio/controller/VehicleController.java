@@ -27,7 +27,7 @@ public class VehicleController {
 
     @GetMapping("/findall")
     @ResponseStatus(HttpStatus.OK)
-    @Cacheable("findAll")
+    @Cacheable("findAllVehicle")
     public List<VehicleResponse> findAll() {
         //logger.info("Listando tudo!");
         return vehicleService.findAll();
@@ -42,7 +42,7 @@ public class VehicleController {
 
     @GetMapping("/finbyid/{id}")
     @ResponseStatus(HttpStatus.OK)
-    @Cacheable("findById")
+    @Cacheable("findByIdVehicle")
     public Vehicle findById(@PathVariable Integer id) throws BadRequestException {
         return vehicleService.findByIdOrThrowObjectNotFoundException(id);
     }

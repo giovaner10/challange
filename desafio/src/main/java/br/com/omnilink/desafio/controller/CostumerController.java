@@ -21,14 +21,15 @@ public class CostumerController {
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public void save(@RequestBody CostumerRequestCreat request) throws BadRequestException {
+    public void save(@Valid @RequestBody CostumerRequestCreat request) throws BadRequestException {
         costumerRepository.save(request);
     }
 
     @GetMapping("/findall")
     @ResponseStatus(HttpStatus.OK)
-   @Cacheable("findAll")
+    @Cacheable("findAll")
     public List<CostumerResponse> findAll() {
+        System.out.println("testando cache");
         //logger.info("Listando tudo!");
         return costumerRepository.findAll();
     }

@@ -4,10 +4,14 @@ import jakarta.validation.UnexpectedTypeException;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
 @ControllerAdvice
 @Log4j2
@@ -38,7 +42,7 @@ public class RestExceptionHandler {
     }
 
     @ExceptionHandler(TypetNotFoundException.class)
-    public ResponseEntity<BadRequestExceptionDetails> handleTypetNotFoundException(ObjectNotFoundException onfe) {
+    public ResponseEntity<BadRequestExceptionDetails> handleTypetNotFoundException(TypetNotFoundException onfe) {
         return new ResponseEntity<>(
                 BadRequestExceptionDetails.builder()
                         .timestamp(LocalDateTime.now())
@@ -49,7 +53,6 @@ public class RestExceptionHandler {
                         .build(), HttpStatus.BAD_REQUEST);
     }
 
-
     @ExceptionHandler(UnexpectedTypeException.class)
     public ResponseEntity<BadRequestExceptionDetails> handleTypetNotFoundException(UnexpectedTypeException ute) {
         return new ResponseEntity<>(
@@ -59,6 +62,24 @@ public class RestExceptionHandler {
                         .title("Bad fields.")
                         .details(ute.getMessage())
                         .developerMessage(ute.getLocalizedMessage())
+                        .build(), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<BadRequestExceptionDetails> handleMethodArgumentNotValidException(MethodArgumentNotValidException manve) {
+        Map<String, String> errors = new HashMap<>();
+        manve.getBindingResult().getAllErrors().forEach((error) -> {
+            String fieldName = ((FieldError) error).getField();
+            String errorMessage = error.getDefaultMessage();
+            errors.put(fieldName, errorMessage);
+        });
+        return new ResponseEntity<>(
+                BadRequestExceptionDetails.builder()
+                        .timestamp(LocalDateTime.now())
+                        .status(HttpStatus.BAD_REQUEST.value())
+                        .title("Bad fields.")
+                        .details(errors.toString())
+                        .developerMessage(manve.getClass().getName())
                         .build(), HttpStatus.BAD_REQUEST);
     }
 

@@ -18,6 +18,6 @@ CREATE TABLE Vehicle (
     category VARCHAR(255) NOT NULL,
     fuel_type VARCHAR(255) NOT NULL,
     status VARCHAR(255) NOT NULL,
-    costumer_id INT NOT NULL,
-    FOREIGN KEY (costumer_id) REFERENCES Costumer(id)
+    costumer INT NOT NULL,
+    FOREIGN KEY (costumer) REFERENCES Costumer(id)
 );

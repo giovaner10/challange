@@ -3,8 +3,10 @@ package br.com.omnilink.desafio.DTO.response;
 import br.com.omnilink.desafio.enums.customer.CostumerType;
 import lombok.Builder;
 
+import java.io.Serializable;
+
 @Builder
-public record CostumerResponse(
+public record CostumerResponse (
 
         Integer id,
 
@@ -15,5 +17,5 @@ public record CostumerResponse(
         String email,
 
         CostumerType costumerType
-) {
+) implements Serializable {
 }
