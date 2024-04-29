@@ -16,6 +16,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/costumer")
 public class CostumerController {
+
     @Autowired
     CostumerService costumerRepository;
 
@@ -37,7 +38,6 @@ public class CostumerController {
     @PutMapping("/update/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void update(@PathVariable Integer id, @Valid @RequestBody CostumerRequestCreat request) throws BadRequestException {
-
         costumerRepository.update(request, id);
     }
 
