@@ -78,7 +78,7 @@ public class CostumerService {
 
     Costumer findByIdOrThrowObjectNotFoundException(Integer id) throws BadRequestException {
 
-        return costumerRepository.findById(id)
+        return cr.findById(id)
                 .orElseThrow(() -> new ObjectNotFoundException("Costumer not Found."));
     }
 }

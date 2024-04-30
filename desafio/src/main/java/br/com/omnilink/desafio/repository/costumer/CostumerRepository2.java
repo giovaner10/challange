@@ -9,6 +9,9 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.swing.text.html.Option;
+import java.util.Optional;
+
 @Repository
 public class CostumerRepository2 {
 
@@ -33,4 +36,20 @@ public class CostumerRepository2 {
             connectionSession.closeSession(session);
         }
     }
+
+    public Optional<Costumer> findById(Integer id) {
+        Session session = null;
+        try {
+            session = connectionSession.getInstance();
+            Costumer customer = session.get(Costumer.class, id);
+            return Optional.ofNullable(customer);
+        } catch (Exception e) {
+            throw new BadRequestException("Failed to retrieve customer due to an unexpected error: " + e.getMessage());
+        } finally {
+            if (session != null) {
+                connectionSession.closeSession(session);
+            }
+        }
+    }
+
 }
