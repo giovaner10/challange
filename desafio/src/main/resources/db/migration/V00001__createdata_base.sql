@@ -21,3 +21,12 @@ CREATE TABLE Vehicle (
     costumer INT NOT NULL,
     FOREIGN KEY (costumer) REFERENCES Costumer(id)
 );
+
+
+CREATE TABLE IF NOT EXISTS USERS (
+  username VARCHAR(250) NOT NULL,
+  password VARCHAR(250) NOT NULL
+);
+
+-- Password: password
+INSERT INTO USERS (username, password) VALUES ('username', '$2a$10$GiseHkdvwOFr7A9KRWbeiOmg/PYPhWVjdm42puLfOzR/gIAQrsAGy');
