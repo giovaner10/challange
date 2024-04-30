@@ -3,7 +3,7 @@ package br.com.omnilink.desafio.controller;
 import br.com.omnilink.desafio.DTO.request.vehicle.VehicleRequestCreat;
 import br.com.omnilink.desafio.DTO.response.vehicle.VehicleResponse;
 import br.com.omnilink.desafio.model.Vehicle;
-import br.com.omnilink.desafio.service.VehicleService;
+import br.com.omnilink.desafio.service.VehicleServiceImpl;
 import jakarta.validation.Valid;
 import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import java.util.List;
 public class VehicleController {
 
     @Autowired
-    VehicleService vehicleService;
+    VehicleServiceImpl vehicleService;
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)

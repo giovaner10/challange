@@ -2,12 +2,12 @@ package br.com.omnilink.desafio.service;
 
 import br.com.omnilink.desafio.DTO.request.vehicle.VehicleRequestCreat;
 import br.com.omnilink.desafio.DTO.response.vehicle.VehicleResponse;
+import br.com.omnilink.desafio.exception.BadRequestException;
 import br.com.omnilink.desafio.exception.ObjectNotFoundException;
 import br.com.omnilink.desafio.mapper.vehicle.VehicleMapper;
 import br.com.omnilink.desafio.model.Costumer;
 import br.com.omnilink.desafio.model.Vehicle;
 import br.com.omnilink.desafio.repository.vehicle.VehicleRepository;
-import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,24 +15,22 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class VehicleService {
+public class VehicleServiceImpl implements IVehicleService{
 
     @Autowired
     VehicleRepository vehicleRepository;
 
     @Autowired
-    CostumerService costumerService;
+    ICostumerService costumerService;
 
     // private static final Logger logger = LoggerFactory.getLogger(VehicleService.class);
-    public Vehicle findById(Integer id) throws BadRequestException {
+    @Override
+    public Vehicle findById(Integer id) {
 
         return this.findByIdOrThrowObjectNotFoundException(id);
     }
 
-    private void existByPlate(String plate) throws BadRequestException {
-        if (vehicleRepository.existsByPlate(plate)) throw new BadRequestException("Vehicle is present");
-    }
-
+    @Override
     public List<VehicleResponse> findAll() {
        // logger.info("Listando tudo.");
 
@@ -42,6 +40,7 @@ public class VehicleService {
                 .toList();
     }
 
+    @Override
     public List<VehicleResponse> findAllByCostumer(Integer id) {
         // logger.info("Listando tudo.");
 
@@ -51,20 +50,22 @@ public class VehicleService {
                 .toList();
     }
 
+    @Override
     @Transactional
-    public void save(VehicleRequestCreat request) throws BadRequestException {
+    public void save(VehicleRequestCreat request) {
 
         existByPlate(request.plate());
 
-        Costumer byId = costumerService.findByIdOrThrowObjectNotFoundException(request.costumerId());
+        Costumer byId = costumerService.findById(request.costumerId());
 
         Vehicle vehicleSave = VehicleMapper.toEntity(request, byId);
 
         vehicleRepository.save(vehicleSave);
     }
 
+    @Override
     @Transactional
-    public void update(VehicleRequestCreat request, Integer id) throws BadRequestException {
+    public void update(VehicleRequestCreat request, Integer id) {
 
         existByPlate(request.plate());
 
@@ -77,16 +78,21 @@ public class VehicleService {
         vehicleRepository.saveAndFlush(vehicleUpdate);
     }
 
+    @Override
     @Transactional
-    public void delete(Integer id) throws BadRequestException {
+    public void delete(Integer id) {
 
         Vehicle byId = findByIdOrThrowObjectNotFoundException(id);
 
         vehicleRepository.delete(byId);
     }
 
-    private Vehicle findByIdOrThrowObjectNotFoundException(Integer id) throws BadRequestException {
+    private Vehicle findByIdOrThrowObjectNotFoundException(Integer id) {
         return vehicleRepository.findById(id)
                 .orElseThrow(() -> new ObjectNotFoundException("Vehicle not Found."));
+    }
+
+    private void existByPlate(String plate)  {
+        if (vehicleRepository.existsByPlate(plate)) throw new BadRequestException("Vehicle is present");
     }
 }

@@ -2,6 +2,7 @@ package br.com.omnilink.desafio.exception;
 
 import jakarta.validation.UnexpectedTypeException;
 import lombok.extern.log4j.Log4j2;
+import org.hibernate.engine.jdbc.spi.SqlExceptionHelper;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -53,6 +54,7 @@ public class RestExceptionHandler {
                         .build(), HttpStatus.BAD_REQUEST);
     }
 
+
     @ExceptionHandler(UnexpectedTypeException.class)
     public ResponseEntity<BadRequestExceptionDetails> handleTypetNotFoundException(UnexpectedTypeException ute) {
         return new ResponseEntity<>(
@@ -64,6 +66,7 @@ public class RestExceptionHandler {
                         .developerMessage(ute.getLocalizedMessage())
                         .build(), HttpStatus.BAD_REQUEST);
     }
+    //SQLIntegrityConstraintViolationException
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<BadRequestExceptionDetails> handleMethodArgumentNotValidException(MethodArgumentNotValidException manve) {
@@ -82,6 +85,8 @@ public class RestExceptionHandler {
                         .developerMessage(manve.getClass().getName())
                         .build(), HttpStatus.BAD_REQUEST);
     }
+
+
 
 //    @Override
 //    protected ResponseEntity<Object> handleMethodArgumentNotValid(

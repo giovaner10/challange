@@ -2,12 +2,11 @@ package br.com.omnilink.desafio.service;
 
 import br.com.omnilink.desafio.DTO.request.costumer.CostumerRequestCreat;
 import br.com.omnilink.desafio.DTO.response.CostumerResponse;
+import br.com.omnilink.desafio.exception.BadRequestException;
 import br.com.omnilink.desafio.exception.ObjectNotFoundException;
 import br.com.omnilink.desafio.mapper.costumer.CostumerMapper;
 import br.com.omnilink.desafio.model.Costumer;
-import br.com.omnilink.desafio.repository.costumer.CostumerRepository2;
-import br.com.omnilink.desafio.repository.costumer.CostumerRepositoryImpl;
-import org.apache.coyote.BadRequestException;
+import br.com.omnilink.desafio.repository.costumer.CostumerRepository;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,24 +16,19 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class CostumerService {
+public class CostumerService implements ICostumerService{
 
     @Autowired
-    CostumerRepositoryImpl costumerRepository;
-
-    @Autowired
-    CostumerRepository2 cr;
+    CostumerRepository costumerRepository;
 
     // private static final Logger logger = LoggerFactory.getLogger(CostumerService.class);
-    public Costumer findById(Integer id) throws BadRequestException {
+    @Override
+    public Costumer findById(Integer id) {
 
         return findByIdOrThrowObjectNotFoundException(id);
     }
 
-    private void existByEmailOrCnpj(String email, String cnpj) throws BadRequestException {
-        if (costumerRepository.existsByEmailOrCnpj(email, cnpj)) throw new BadRequestException("Costumer is present");
-    }
-
+    @Override
     public List<CostumerResponse> findAll() {
         // logger.info("Listando tudo.");
 
@@ -44,41 +38,55 @@ public class CostumerService {
                 .toList();
     }
 
+    @Override
     @Transactional
-    public void save(CostumerRequestCreat request) throws BadRequestException {
+    public void save(CostumerRequestCreat request) {
 
         existByEmailOrCnpj(request.email(), request.cnpj());
 
         Costumer costumerSave = CostumerMapper.toEntity(request);
 
-        cr.save(costumerSave);
+        costumerRepository.save(costumerSave);
     }
 
+    @Override
     @Transactional
-    public void update(CostumerRequestCreat request, Integer id) throws BadRequestException {
-
-        existByEmailOrCnpj(request.email(), request.cnpj());
+    public void update(CostumerRequestCreat request, Integer id) {
 
         findByIdOrThrowObjectNotFoundException(id);
+
+        existByEmailOrCnpjAndId(request.email(), request.cnpj(), id);
 
         Costumer costumerUpdate = CostumerMapper.toEntity(request);
 
         costumerUpdate.setId(id);
 
-        costumerRepository.save(costumerUpdate);
+        costumerRepository.update(costumerUpdate);
     }
 
+    @Override
     @Transactional
-    public void delete(Integer id) throws BadRequestException {
+    public void delete(Integer id) {
 
         Costumer byId = findByIdOrThrowObjectNotFoundException(id);
 
-        costumerRepository.deleteById(byId.getId());
+        costumerRepository.delete(byId.getId());
     }
 
-    Costumer findByIdOrThrowObjectNotFoundException(Integer id) throws BadRequestException {
-
-        return cr.findById(id)
+    private Costumer findByIdOrThrowObjectNotFoundException(Integer id) {
+        return costumerRepository.findById(id)
                 .orElseThrow(() -> new ObjectNotFoundException("Costumer not Found."));
+    }
+
+    private void existByEmailOrCnpj(String email, String cnpj) {
+        if (costumerRepository.existsByEmailOrCnpj(email, cnpj)) {
+            throw new BadRequestException("Email or cnpj is presents.");
+        }
+    }
+
+    private void existByEmailOrCnpjAndId(String email, String cnpj, Integer id) {
+        if (costumerRepository.existsByEmailOrCnpjAndId(email, cnpj, id)) {
+            throw new BadRequestException("Email or cnpj is presents.");
+        }
     }
 }
