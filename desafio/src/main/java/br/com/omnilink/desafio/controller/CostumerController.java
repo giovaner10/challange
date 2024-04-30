@@ -18,12 +18,12 @@ import java.util.List;
 public class CostumerController {
 
     @Autowired
-    CostumerService costumerRepository;
+    CostumerService costumerService;
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public void save(@Valid @RequestBody CostumerRequestCreat request) throws BadRequestException {
-        costumerRepository.save(request);
+        costumerService.save(request);
     }
 
     @GetMapping("/findall")
@@ -32,25 +32,25 @@ public class CostumerController {
     public List<CostumerResponse> findAll() {
         System.out.println("testando cache");
         //logger.info("Listando tudo!");
-        return costumerRepository.findAll();
+        return costumerService.findAll();
     }
 
     @PutMapping("/update/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void update(@PathVariable Integer id, @Valid @RequestBody CostumerRequestCreat request) throws BadRequestException {
-        costumerRepository.update(request, id);
+        costumerService.update(request, id);
     }
 
     @GetMapping("/finbyid/{id}")
     @ResponseStatus(HttpStatus.OK)
     @Cacheable("findById")
     public Costumer findById(@PathVariable Integer id) throws BadRequestException {
-        return costumerRepository.findById(id);
+        return costumerService.findById(id);
     }
 
     @DeleteMapping("/delete/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable Integer id) throws BadRequestException {
-        costumerRepository.delete(id);
+        costumerService.delete(id);
     }
 }

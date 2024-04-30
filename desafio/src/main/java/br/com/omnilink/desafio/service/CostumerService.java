@@ -5,6 +5,7 @@ import br.com.omnilink.desafio.DTO.response.CostumerResponse;
 import br.com.omnilink.desafio.exception.ObjectNotFoundException;
 import br.com.omnilink.desafio.mapper.costumer.CostumerMapper;
 import br.com.omnilink.desafio.model.Costumer;
+import br.com.omnilink.desafio.repository.costumer.CostumerRepository2;
 import br.com.omnilink.desafio.repository.costumer.CostumerRepositoryImpl;
 import org.apache.coyote.BadRequestException;
 //import org.slf4j.Logger;
@@ -21,7 +22,10 @@ public class CostumerService {
     @Autowired
     CostumerRepositoryImpl costumerRepository;
 
-   // private static final Logger logger = LoggerFactory.getLogger(CostumerService.class);
+    @Autowired
+    CostumerRepository2 cr;
+
+    // private static final Logger logger = LoggerFactory.getLogger(CostumerService.class);
     public Costumer findById(Integer id) throws BadRequestException {
 
         return findByIdOrThrowObjectNotFoundException(id);
@@ -47,7 +51,7 @@ public class CostumerService {
 
         Costumer costumerSave = CostumerMapper.toEntity(request);
 
-        costumerRepository.save(costumerSave);
+        cr.save(costumerSave);
     }
 
     @Transactional
@@ -72,7 +76,7 @@ public class CostumerService {
         costumerRepository.deleteById(byId.getId());
     }
 
-    private Costumer findByIdOrThrowObjectNotFoundException(Integer id) throws BadRequestException {
+    Costumer findByIdOrThrowObjectNotFoundException(Integer id) throws BadRequestException {
 
         return costumerRepository.findById(id)
                 .orElseThrow(() -> new ObjectNotFoundException("Costumer not Found."));
