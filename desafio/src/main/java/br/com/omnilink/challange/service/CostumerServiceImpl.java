@@ -43,11 +43,13 @@ public class CostumerServiceImpl implements ICostumerService{
     }
 
     @Override
-    public Costumer findById(Integer id) {
+    public CostumerResponse findById(Integer id) {
 
         logger.info("user: {} - action: find by id: " + id, logged.getUsername());
 
-        return findByIdOrThrowObjectNotFoundException(id);
+        Costumer byId = findByIdOrThrowObjectNotFoundException(id);
+
+        return CostumerMapper.toResponse(byId);
     }
 
     @Override
@@ -90,7 +92,7 @@ public class CostumerServiceImpl implements ICostumerService{
         logger.info("user: {} - action: finaly delete costumer: " + id, logged.getUsername());
     }
 
-    private Costumer findByIdOrThrowObjectNotFoundException(Integer id) {
+    public Costumer findByIdOrThrowObjectNotFoundException(Integer id) {
         Optional<Costumer> costumer = costumerRepository.findById(id);
 
         if (costumer.isEmpty()){

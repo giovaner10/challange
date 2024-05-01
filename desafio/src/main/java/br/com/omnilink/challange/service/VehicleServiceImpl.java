@@ -34,7 +34,7 @@ public class VehicleServiceImpl implements IVehicleService{
 
         existByPlate(request.plate());
 
-        Costumer byId = costumerService.findById(request.costumerId());
+        Costumer byId = costumerService.findByIdOrThrowObjectNotFoundException(request.costumerId());
 
         Vehicle vehicleSave = VehicleMapper.toEntity(request, byId);
 

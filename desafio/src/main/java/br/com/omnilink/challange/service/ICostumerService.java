@@ -8,7 +8,9 @@ import java.util.List;
 
 public interface ICostumerService {
 
-    Costumer findById(Integer id);
+    CostumerResponse findById(Integer id);
+
+    Costumer findByIdOrThrowObjectNotFoundException(Integer id);
 
     List<CostumerResponse> findAll();
 

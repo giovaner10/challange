@@ -36,7 +36,7 @@ public class CostumerController {
     @GetMapping("/finbyid/{id}")
     @ResponseStatus(HttpStatus.OK)
    // @Cacheable("findById")
-    public Costumer findById(@PathVariable Integer id) {
+    public CostumerResponse findById(@PathVariable Integer id) {
         return costumerService.findById(id);
     }
 

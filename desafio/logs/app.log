@@ -1,0 +1,28 @@
+2024-05-01 16:37:51.501 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find by id: 1
+2024-05-01 16:38:09.072 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find by id: 1
+2024-05-01 16:42:09.301 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find by id: 1
+2024-05-01 16:42:09.357 [ERROR] [main] b.c.o.c.service.CostumerServiceImpl - user: null - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-01 16:42:27.113 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find by id: 1
+2024-05-01 16:42:27.134 [ERROR] [main] b.c.o.c.service.CostumerServiceImpl - user: null - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-01 16:42:27.197 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find by id: 1
+2024-05-01 16:42:37.192 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find by id: 1
+2024-05-01 16:42:37.210 [ERROR] [main] b.c.o.c.service.CostumerServiceImpl - user: null - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-01 16:42:37.263 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find by id: 1
+2024-05-01 16:48:13.418 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find all.
+2024-05-01 16:50:11.120 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find all.
+2024-05-01 16:50:36.103 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find all.
+2024-05-01 16:51:55.337 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find all.
+2024-05-01 16:52:11.260 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find all.
+2024-05-01 16:52:11.369 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find by id: 1
+2024-05-01 16:52:11.373 [ERROR] [main] b.c.o.c.service.CostumerServiceImpl - user: null - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-01 16:52:11.389 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find by id: 1
+2024-05-01 16:52:11.412 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find all.
+2024-05-01 17:00:45.073 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find all.
+2024-05-01 17:00:45.189 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null action: init save costumer email: exemplo@example.com
+2024-05-01 17:00:45.195 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: finaly save costumer email: exemplo@example.com
+2024-05-01 17:00:45.213 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null action: init save costumer email: exemplo@example.com
+2024-05-01 17:00:45.214 [ERROR] [main] b.c.o.c.service.CostumerServiceImpl - user: null - Fail to create costumer is present email/cnpj: exemplo@example.com / 12345678901234 - error: class br.com.omnilink.challange.exception.BadRequestException
+2024-05-01 17:00:45.241 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find by id: 1
+2024-05-01 17:00:45.242 [ERROR] [main] b.c.o.c.service.CostumerServiceImpl - user: null - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-01 17:00:45.259 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find by id: 1
+2024-05-01 17:00:45.275 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find all.
