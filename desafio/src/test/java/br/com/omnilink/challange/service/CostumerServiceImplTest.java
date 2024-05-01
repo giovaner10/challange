@@ -110,4 +110,47 @@ class CostumerServiceImplTest {
 
         assertThrows(BadRequestException.class, ()-> costumerService.save(costumerRequest));
     }
+
+
+    @Test
+    void update() {
+        when(costumerRepository.findById(1)).thenReturn(Optional.ofNullable(costumer));
+
+        when(costumerRepository.existsByEmailOrCnpjAndId("exemplo@example.com", "12345678901234", 1)).thenReturn(false);
+
+        assertDoesNotThrow(()-> costumerService.update(costumerRequest, 1));
+
+    }
+
+    @Test
+    void updateDontExistingCostumer() {
+        when(costumerRepository.findById(1)).thenReturn(Optional.empty());
+
+        assertThrows(ObjectNotFoundException.class, ()-> costumerService.update(costumerRequest, 1));
+    }
+
+    @Test
+    void updateExistingEmailOrCnpj() {
+        when(costumerRepository.findById(1)).thenReturn(Optional.ofNullable(costumer));
+
+        when(costumerRepository.existsByEmailOrCnpjAndId("exemplo@example.com", "12345678901234", 1)).thenReturn(true);
+
+        assertThrows(BadRequestException.class, ()-> costumerService.update(costumerRequest, 1));
+    }
+
+
+    @Test
+    void delete() {
+        when(costumerRepository.findById(1)).thenReturn(Optional.ofNullable(costumer));
+
+        assertDoesNotThrow(()-> costumerService.delete(1));
+    }
+
+    @Test
+    void deleteDontExistingCostumer() {
+        when(costumerRepository.findById(1)).thenReturn(Optional.empty());
+
+        assertThrows(ObjectNotFoundException.class, ()-> costumerService.delete(1));
+    }
+
 }
