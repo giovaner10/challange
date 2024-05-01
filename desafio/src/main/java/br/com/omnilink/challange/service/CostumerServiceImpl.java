@@ -7,13 +7,15 @@ import br.com.omnilink.challange.exception.ObjectNotFoundException;
 import br.com.omnilink.challange.mapper.costumer.CostumerMapper;
 import br.com.omnilink.challange.model.Costumer;
 import br.com.omnilink.challange.repository.costumer.CostumerRepository;
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
+import br.com.omnilink.challange.security.security.UserDetailsLogged;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CostumerServiceImpl implements ICostumerService{
@@ -21,16 +23,36 @@ public class CostumerServiceImpl implements ICostumerService{
     @Autowired
     CostumerRepository costumerRepository;
 
-    // private static final Logger logger = LoggerFactory.getLogger(CostumerService.class);
+    @Autowired
+    UserDetailsLogged logged;
+
+    private static final Logger logger = LoggerFactory.getLogger(CostumerServiceImpl.class);
+
+    @Override
+    @Transactional
+    public void save(CostumerRequestCreat request) {
+        logger.info("user: {} action: init save costumer email: " + request.email(), logged.getUsername());
+
+        existByEmailOrCnpj(request.email(), request.cnpj());
+
+        Costumer costumerSave = CostumerMapper.toEntity(request);
+
+        costumerRepository.save(costumerSave);
+
+        logger.info("user: {} - action: finaly save costumer email: " + request.email(), logged.getUsername());
+    }
+
     @Override
     public Costumer findById(Integer id) {
+
+        logger.info("user: {} - action: find by id: " + id, logged.getUsername());
 
         return findByIdOrThrowObjectNotFoundException(id);
     }
 
     @Override
     public List<CostumerResponse> findAll() {
-        // logger.info("Listando tudo.");
+        logger.info("user: {} - action: find all.", logged.getUsername());
 
         return costumerRepository.findAll()
                 .stream()
@@ -40,18 +62,8 @@ public class CostumerServiceImpl implements ICostumerService{
 
     @Override
     @Transactional
-    public void save(CostumerRequestCreat request) {
-
-        existByEmailOrCnpj(request.email(), request.cnpj());
-
-        Costumer costumerSave = CostumerMapper.toEntity(request);
-
-        costumerRepository.save(costumerSave);
-    }
-
-    @Override
-    @Transactional
     public void update(CostumerRequestCreat request, Integer id) {
+        logger.info("user: {} - action:  init update costumer id: " + id, logged.getUsername());
 
         findByIdOrThrowObjectNotFoundException(id);
 
@@ -62,30 +74,43 @@ public class CostumerServiceImpl implements ICostumerService{
         costumerUpdate.setId(id);
 
         costumerRepository.update(costumerUpdate);
+
+        logger.info("user: {} - action: finaly update costumer id: " + id, logged.getUsername());
     }
 
     @Override
     @Transactional
     public void delete(Integer id) {
+        logger.info("user: {} - action: init delete costumer: " + id, logged.getUsername());
 
         Costumer byId = findByIdOrThrowObjectNotFoundException(id);
 
         costumerRepository.delete(byId.getId());
+
+        logger.info("user: {} - action: finaly delete costumer: " + id, logged.getUsername());
     }
 
     private Costumer findByIdOrThrowObjectNotFoundException(Integer id) {
-        return costumerRepository.findById(id)
-                .orElseThrow(() -> new ObjectNotFoundException("Costumer not Found."));
+        Optional<Costumer> costumer = costumerRepository.findById(id);
+
+        if (costumer.isEmpty()){
+            logger.error("user: {} - Fail to find costumer is not present id: " + id + " - error: {}", logged.getUsername(), ObjectNotFoundException.class);
+            throw new ObjectNotFoundException("Costumer not Found.");
+        }
+
+        return costumer.get();
     }
 
     private void existByEmailOrCnpj(String email, String cnpj) {
         if (costumerRepository.existsByEmailOrCnpj(email, cnpj)) {
+            logger.error("user: {} - Fail to create costumer is present email/cnpj: " + email + " / " + cnpj + " - error: {}", logged.getUsername(), BadRequestException.class);
             throw new BadRequestException("Email or cnpj is presents.");
         }
     }
 
     private void existByEmailOrCnpjAndId(String email, String cnpj, Integer id) {
         if (costumerRepository.existsByEmailOrCnpjAndId(email, cnpj, id)) {
+            logger.error("user: {} - Fail to update costumer id: " + id + " - error: {}", logged.getUsername(), BadRequestException.class);
             throw new BadRequestException("Email or cnpj is presents.");
         }
     }

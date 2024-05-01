@@ -4,6 +4,7 @@ import br.com.omnilink.challange.DTO.request.vehicle.VehicleRequestCreat;
 import br.com.omnilink.challange.DTO.response.vehicle.VehicleResponse;
 import br.com.omnilink.challange.exception.BadRequestException;
 import br.com.omnilink.challange.model.Vehicle;
+import com.fasterxml.jackson.core.JsonProcessingException;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public interface IVehicleService {
 
     List<VehicleResponse> findAllByCostumer(Integer id);
 
-    void save(VehicleRequestCreat request) throws BadRequestException;
+    void save(VehicleRequestCreat request) throws BadRequestException, JsonProcessingException;
 
     void update(VehicleRequestCreat request, Integer id) throws BadRequestException;
 

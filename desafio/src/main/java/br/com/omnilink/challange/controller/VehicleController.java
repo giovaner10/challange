@@ -4,8 +4,8 @@ import br.com.omnilink.challange.DTO.request.vehicle.VehicleRequestCreat;
 import br.com.omnilink.challange.DTO.response.vehicle.VehicleResponse;
 import br.com.omnilink.challange.model.Vehicle;
 import br.com.omnilink.challange.service.VehicleServiceImpl;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.validation.Valid;
-import org.apache.coyote.BadRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
@@ -22,8 +22,15 @@ public class VehicleController {
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public void save(@Valid @RequestBody VehicleRequestCreat request) throws BadRequestException {
+    public void save(@Valid @RequestBody VehicleRequestCreat request) throws JsonProcessingException {
         vehicleService.save(request);
+    }
+
+    @GetMapping("/finbyid/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    @Cacheable("findByIdVehicle")
+    public Vehicle findById(@PathVariable Integer id) {
+        return vehicleService.findById(id);
     }
 
     @GetMapping("/findall")
@@ -44,20 +51,13 @@ public class VehicleController {
 
     @PutMapping("/update/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void update(@PathVariable Integer id,@Valid @RequestBody VehicleRequestCreat request) throws BadRequestException {
+    public void update(@PathVariable Integer id,@Valid @RequestBody VehicleRequestCreat request) {
         vehicleService.update(request, id);
-    }
-
-    @GetMapping("/finbyid/{id}")
-    @ResponseStatus(HttpStatus.OK)
-    @Cacheable("findByIdVehicle")
-    public Vehicle findById(@PathVariable Integer id) throws BadRequestException {
-        return vehicleService.findById(id);
     }
 
     @DeleteMapping("/delete/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void delete(@PathVariable Integer id) throws BadRequestException {
+    public void delete(@PathVariable Integer id) {
         vehicleService.delete(id);
     }
 }

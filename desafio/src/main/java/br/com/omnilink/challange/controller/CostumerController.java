@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/costumer")
 public class CostumerController {
+
     @Autowired
     ICostumerService costumerService;
 
@@ -32,17 +33,18 @@ public class CostumerController {
         return costumerService.findAll();
     }
 
-    @PutMapping("/update/{id}")
-    @ResponseStatus(HttpStatus.OK)
-    public void update(@PathVariable Integer id, @Valid @RequestBody CostumerRequestCreat request) {
-        costumerService.update(request, id);
-    }
-
     @GetMapping("/finbyid/{id}")
     @ResponseStatus(HttpStatus.OK)
    // @Cacheable("findById")
     public Costumer findById(@PathVariable Integer id) {
         return costumerService.findById(id);
+    }
+
+
+    @PutMapping("/update/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void update(@PathVariable Integer id, @Valid @RequestBody CostumerRequestCreat request) {
+        costumerService.update(request, id);
     }
 
     @DeleteMapping("/delete/{id}")

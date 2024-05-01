@@ -8,6 +8,8 @@ import br.com.omnilink.challange.mapper.vehicle.VehicleMapper;
 import br.com.omnilink.challange.model.Costumer;
 import br.com.omnilink.challange.model.Vehicle;
 import br.com.omnilink.challange.repository.vehicle.VehicleRepository;
+import br.com.omnilink.challange.validator.CepValidator;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,6 +26,21 @@ public class VehicleServiceImpl implements IVehicleService{
     ICostumerService costumerService;
 
     // private static final Logger logger = LoggerFactory.getLogger(VehicleService.class);
+    @Override
+    @Transactional
+    public void save(VehicleRequestCreat request) throws JsonProcessingException {
+
+        CepValidator.validate(request);
+
+        existByPlate(request.plate());
+
+        Costumer byId = costumerService.findById(request.costumerId());
+
+        Vehicle vehicleSave = VehicleMapper.toEntity(request, byId);
+
+        vehicleRepository.save(vehicleSave);
+    }
+
     @Override
     public Vehicle findById(Integer id) {
 
@@ -48,19 +65,6 @@ public class VehicleServiceImpl implements IVehicleService{
                 .stream()
                 .map(VehicleMapper::toResponse)
                 .toList();
-    }
-
-    @Override
-    @Transactional
-    public void save(VehicleRequestCreat request) {
-
-        existByPlate(request.plate());
-
-        Costumer byId = costumerService.findById(request.costumerId());
-
-        Vehicle vehicleSave = VehicleMapper.toEntity(request, byId);
-
-        vehicleRepository.save(vehicleSave);
     }
 
     @Override

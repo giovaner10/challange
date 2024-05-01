@@ -1,8 +1,6 @@
 spring:
-  cache:
-    type: redis
   application:
-    name: desafio
+    name: challange
   datasource:
     url: jdbc:mysql://localhost:3306/challange
     username: root
@@ -13,6 +11,8 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
   flyway:
     locations: classpath:db/migration
+  cache:
+    type: redis
   data:
     redis:
       host: localhost
