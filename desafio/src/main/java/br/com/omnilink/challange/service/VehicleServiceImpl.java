@@ -8,8 +8,11 @@ import br.com.omnilink.challange.mapper.vehicle.VehicleMapper;
 import br.com.omnilink.challange.model.Costumer;
 import br.com.omnilink.challange.model.Vehicle;
 import br.com.omnilink.challange.repository.vehicle.VehicleRepository;
+import br.com.omnilink.challange.security.security.UserDetailsLogged;
 import br.com.omnilink.challange.validator.CepValidator;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,10 +28,15 @@ public class VehicleServiceImpl implements IVehicleService{
     @Autowired
     ICostumerService costumerService;
 
-    // private static final Logger logger = LoggerFactory.getLogger(VehicleService.class);
+    @Autowired
+    UserDetailsLogged logged;
+
+    private static final Logger logger = LoggerFactory.getLogger(VehicleServiceImpl.class);
+
     @Override
     @Transactional
     public void save(VehicleRequestCreat request) throws JsonProcessingException {
+        logger.info("user: {} action: init save vehicle plate/user: " + request.plate() + "/" + request.costumerId(), logged.getUsername());
 
         CepValidator.validate(request);
 
@@ -39,17 +47,22 @@ public class VehicleServiceImpl implements IVehicleService{
         Vehicle vehicleSave = VehicleMapper.toEntity(request, byId);
 
         vehicleRepository.save(vehicleSave);
+
+        logger.info("user: {} action: saved vehicle plate/user: " + request.plate() + "/" + request.costumerId(), logged.getUsername());
     }
 
     @Override
-    public Vehicle findById(Integer id) {
+    public VehicleResponse findById(Integer id) {
+        logger.info("user: {} - action: find vehicle by id : " + id, logged.getUsername());
 
-        return this.findByIdOrThrowObjectNotFoundException(id);
+        Vehicle byId = this.findByIdOrThrowObjectNotFoundException(id);
+
+        return VehicleMapper.toResponse(byId);
     }
 
     @Override
     public List<VehicleResponse> findAll() {
-       // logger.info("Listando tudo.");
+        logger.info("user: {} - action: find all vehicles.", logged.getUsername());
 
         return vehicleRepository.findAll()
                 .stream()
@@ -59,7 +72,7 @@ public class VehicleServiceImpl implements IVehicleService{
 
     @Override
     public List<VehicleResponse> findAllByCostumer(Integer id) {
-        // logger.info("Listando tudo.");
+        logger.info("user: {} - action: find all vehicles by costumer id: " + id, logged.getUsername());
 
         return vehicleRepository.findAllByCostumer(id)
                 .stream()
@@ -70,25 +83,29 @@ public class VehicleServiceImpl implements IVehicleService{
     @Override
     @Transactional
     public void update(VehicleRequestCreat request, Integer id) {
+        logger.info("user: {} - action: init update vehicle id: " + id, logged.getUsername());
 
-        existByPlate(request.plate());
+        existByPlateAndId(request.plate(), id);
 
-        Vehicle byId = findByIdOrThrowObjectNotFoundException(id);
-
-        Vehicle vehicleUpdate = VehicleMapper.toEntity(request, byId.getCostumer());
+        Vehicle vehicleUpdate = VehicleMapper.toEntityUpdate(request);
 
         vehicleUpdate.setId(id);
 
         vehicleRepository.saveAndFlush(vehicleUpdate);
+
+        logger.info("user: {} - action: finally update vehicle id: " + id, logged.getUsername());
     }
 
     @Override
     @Transactional
     public void delete(Integer id) {
+        logger.info("user: {} - action: init delete vehicle: " + id, logged.getUsername());
 
         Vehicle byId = findByIdOrThrowObjectNotFoundException(id);
 
         vehicleRepository.delete(byId);
+
+        logger.info("user: {} - action: finally delete vehicle: " + id, logged.getUsername());
     }
 
     private Vehicle findByIdOrThrowObjectNotFoundException(Integer id) {
@@ -97,6 +114,16 @@ public class VehicleServiceImpl implements IVehicleService{
     }
 
     private void existByPlate(String plate)  {
-        if (vehicleRepository.existsByPlate(plate)) throw new BadRequestException("Vehicle is present");
+        if (vehicleRepository.existsByPlate(plate)) {
+            logger.error("user: {} - Fail to save vehicle plate is present, plate: " + plate + " - error: {}", logged.getUsername(), BadRequestException.class);
+            throw new BadRequestException("Vehicle is present");
+        }
+    }
+
+    private void existByPlateAndId(String plate, Integer id)  {
+        if (!vehicleRepository.existsByPlateAndId(plate, id)) {
+            logger.error("user: {} - Fail to save update plate is present, plate: " + plate + " - error: {}", logged.getUsername(), BadRequestException.class);
+            throw new BadRequestException("Vehicle is present");
+        }
     }
 }

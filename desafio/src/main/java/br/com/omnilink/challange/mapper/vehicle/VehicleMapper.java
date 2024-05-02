@@ -30,6 +30,21 @@ public class VehicleMapper {
                 .build();
     }
 
+    public static Vehicle toEntityUpdate(VehicleRequestCreat request) {
+        return Vehicle.builder()
+                .plate(request.plate())
+                .model(request.model())
+                .modelYear(request.modelYear())
+                .city(request.city())
+                .state(request.state())
+                .registrationDate(LocalDate.now())
+                .brand(VehicleBrand.fromIdBrand(request.brand()))
+                .category(VehicleCategory.fromIdCategory(request.category()))
+                .fuelType(VehicleFuelType.fromIdFuelType(request.fuelType()))
+                .status(VehicleStatus.fromIdStatus(request.status()))
+                .build();
+    }
+
     public static VehicleResponse toResponse(Vehicle vehicle) {
         return VehicleResponse.builder()
                 .id(vehicle.getId())

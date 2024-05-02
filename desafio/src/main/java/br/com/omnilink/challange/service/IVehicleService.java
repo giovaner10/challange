@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface IVehicleService {
 
-    Vehicle findById(Integer id) throws BadRequestException;
+    VehicleResponse findById(Integer id) throws BadRequestException;
 
     List<VehicleResponse> findAll();
 

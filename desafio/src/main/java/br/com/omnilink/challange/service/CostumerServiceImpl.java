@@ -39,7 +39,7 @@ public class CostumerServiceImpl implements ICostumerService{
 
         costumerRepository.save(costumerSave);
 
-        logger.info("user: {} - action: finaly save costumer email: " + request.email(), logged.getUsername());
+        logger.info("user: {} - action: finally save costumer email: " + request.email(), logged.getUsername());
     }
 
     @Override
@@ -77,7 +77,7 @@ public class CostumerServiceImpl implements ICostumerService{
 
         costumerRepository.update(costumerUpdate);
 
-        logger.info("user: {} - action: finaly update costumer id: " + id, logged.getUsername());
+        logger.info("user: {} - action: finally update costumer id: " + id, logged.getUsername());
     }
 
     @Override
@@ -89,7 +89,7 @@ public class CostumerServiceImpl implements ICostumerService{
 
         costumerRepository.delete(byId.getId());
 
-        logger.info("user: {} - action: finaly delete costumer: " + id, logged.getUsername());
+        logger.info("user: {} - action: finally delete costumer: " + id, logged.getUsername());
     }
 
     public Costumer findByIdOrThrowObjectNotFoundException(Integer id) {

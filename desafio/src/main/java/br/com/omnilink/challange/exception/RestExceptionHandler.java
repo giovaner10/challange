@@ -65,7 +65,7 @@ public class RestExceptionHandler {
                         .developerMessage(ute.getLocalizedMessage())
                         .build(), HttpStatus.BAD_REQUEST);
     }
-    //SQLIntegrityConstraintViolationException
+    //SQLIntegrityConstraintViolationException, ConstraintViolationException
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<BadRequestExceptionDetails> handleMethodArgumentNotValidException(MethodArgumentNotValidException manve) {

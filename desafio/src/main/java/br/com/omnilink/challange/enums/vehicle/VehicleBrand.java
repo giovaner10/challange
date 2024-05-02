@@ -1,9 +1,11 @@
 package br.com.omnilink.challange.enums.vehicle;
 
 import br.com.omnilink.challange.exception.TypetNotFoundException;
+import lombok.Getter;
 
 import java.util.Arrays;
 
+@Getter
 public enum VehicleBrand {
     TOYOTA(1),
     HONDA(2),

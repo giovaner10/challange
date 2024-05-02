@@ -29,7 +29,7 @@ public class VehicleController {
     @GetMapping("/finbyid/{id}")
     @ResponseStatus(HttpStatus.OK)
     @Cacheable("findByIdVehicle")
-    public Vehicle findById(@PathVariable Integer id) {
+    public VehicleResponse findById(@PathVariable Integer id) {
         return vehicleService.findById(id);
     }
 

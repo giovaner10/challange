@@ -131,3 +131,119 @@
 2024-05-01 17:26:12.608 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action:  init update costumer id: 1
 2024-05-01 17:26:12.609 [ERROR] [main] b.c.o.c.service.CostumerServiceImpl - user: null - Fail to update costumer id: 1 - error: class br.com.omnilink.challange.exception.BadRequestException
 2024-05-01 17:26:12.623 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find all.
+2024-05-01 19:25:29.847 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action:  init update costumer id: 1
+2024-05-01 19:25:29.865 [ERROR] [main] b.c.o.c.service.CostumerServiceImpl - user: null - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-01 19:25:29.934 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: init delete costumer: 1
+2024-05-01 19:25:29.941 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: finaly delete costumer: 1
+2024-05-01 19:25:30.010 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find all.
+2024-05-01 19:25:30.152 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action:  init update costumer id: 1
+2024-05-01 19:25:30.297 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: init delete costumer: 1
+2024-05-01 19:25:30.299 [ERROR] [main] b.c.o.c.service.CostumerServiceImpl - user: null - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-01 19:25:30.316 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null action: init save costumer email: exemplo@example.com
+2024-05-01 19:25:30.345 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null action: init save costumer email: exemplo@example.com
+2024-05-01 19:25:30.367 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find by id: 1
+2024-05-01 19:25:30.368 [ERROR] [main] b.c.o.c.service.CostumerServiceImpl - user: null - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-01 19:25:30.379 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find by id: 1
+2024-05-01 19:25:30.396 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action:  init update costumer id: 1
+2024-05-01 19:25:30.414 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find all.
+2024-05-01 19:26:16.847 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action:  init update costumer id: 1
+2024-05-01 19:26:16.863 [ERROR] [main] b.c.o.c.service.CostumerServiceImpl - user: null - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-01 19:26:16.925 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: init delete costumer: 1
+2024-05-01 19:26:16.928 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: finaly delete costumer: 1
+2024-05-01 19:26:16.947 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find all.
+2024-05-01 19:26:17.013 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action:  init update costumer id: 1
+2024-05-01 19:26:17.020 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: finaly update costumer id: 1
+2024-05-01 19:26:17.037 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: init delete costumer: 1
+2024-05-01 19:26:17.038 [ERROR] [main] b.c.o.c.service.CostumerServiceImpl - user: null - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-01 19:26:17.060 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null action: init save costumer email: exemplo@example.com
+2024-05-01 19:26:17.061 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: finaly save costumer email: exemplo@example.com
+2024-05-01 19:26:17.075 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null action: init save costumer email: exemplo@example.com
+2024-05-01 19:26:17.076 [ERROR] [main] b.c.o.c.service.CostumerServiceImpl - user: null - Fail to create costumer is present email/cnpj: exemplo@example.com / 12345678901234 - error: class br.com.omnilink.challange.exception.BadRequestException
+2024-05-01 19:26:17.091 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find by id: 1
+2024-05-01 19:26:17.092 [ERROR] [main] b.c.o.c.service.CostumerServiceImpl - user: null - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-01 19:26:17.103 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find by id: 1
+2024-05-01 19:26:17.126 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action:  init update costumer id: 1
+2024-05-01 19:26:17.128 [ERROR] [main] b.c.o.c.service.CostumerServiceImpl - user: null - Fail to update costumer id: 1 - error: class br.com.omnilink.challange.exception.BadRequestException
+2024-05-01 19:26:17.140 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find all.
+2024-05-01 19:49:29.384 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action:  init update costumer id: 1
+2024-05-01 19:49:29.402 [ERROR] [main] b.c.o.c.service.CostumerServiceImpl - user: null - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-01 19:49:29.475 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: init delete costumer: 1
+2024-05-01 19:49:29.477 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: finally delete costumer: 1
+2024-05-01 19:49:29.495 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find all.
+2024-05-01 19:49:29.575 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action:  init update costumer id: 1
+2024-05-01 19:49:29.583 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: finally update costumer id: 1
+2024-05-01 19:49:29.609 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: init delete costumer: 1
+2024-05-01 19:49:29.610 [ERROR] [main] b.c.o.c.service.CostumerServiceImpl - user: null - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-01 19:49:29.638 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null action: init save costumer email: exemplo@example.com
+2024-05-01 19:49:29.639 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: finally save costumer email: exemplo@example.com
+2024-05-01 19:49:29.658 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null action: init save costumer email: exemplo@example.com
+2024-05-01 19:49:29.659 [ERROR] [main] b.c.o.c.service.CostumerServiceImpl - user: null - Fail to create costumer is present email/cnpj: exemplo@example.com / 12345678901234 - error: class br.com.omnilink.challange.exception.BadRequestException
+2024-05-01 19:49:29.679 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find by id: 1
+2024-05-01 19:49:29.680 [ERROR] [main] b.c.o.c.service.CostumerServiceImpl - user: null - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-01 19:49:29.721 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find by id: 1
+2024-05-01 19:49:29.763 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action:  init update costumer id: 1
+2024-05-01 19:49:29.767 [ERROR] [main] b.c.o.c.service.CostumerServiceImpl - user: null - Fail to update costumer id: 1 - error: class br.com.omnilink.challange.exception.BadRequestException
+2024-05-01 19:49:29.783 [INFO ] [main] b.c.o.c.service.CostumerServiceImpl - user: null - action: find all.
+2024-05-01 20:26:32.496 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: init save vehicle plate/user: ABC123/1
+2024-05-01 20:28:27.683 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: init save vehicle plate/user: ABC123/1
+2024-05-01 20:28:31.124 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: saved vehicle plate/user: ABC123/1
+2024-05-01 20:29:44.826 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: init save vehicle plate/user: ABC123/1
+2024-05-01 20:29:48.424 [ERROR] [main] b.c.o.c.service.VehicleServiceImpl - user: null - Fail to save vehicle plate is present, plate: ABC123 - error: class br.com.omnilink.challange.exception.BadRequestException
+2024-05-01 20:31:46.203 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: init save vehicle plate/user: ABC123/1
+2024-05-01 20:31:49.711 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: init save vehicle plate/user: ABC123/1
+2024-05-01 20:31:49.849 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: saved vehicle plate/user: ABC123/1
+2024-05-01 20:31:49.860 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: init save vehicle plate/user: ABC123/1
+2024-05-01 20:31:49.990 [ERROR] [main] b.c.o.c.service.VehicleServiceImpl - user: null - Fail to save vehicle plate is present, plate: ABC123 - error: class br.com.omnilink.challange.exception.BadRequestException
+2024-05-01 20:35:05.360 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find all vehicles.
+2024-05-01 20:35:53.434 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find all vehicles.
+2024-05-01 20:45:49.436 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find vehicle by id : 1
+2024-05-01 20:46:39.546 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find vehicle by id : 1
+2024-05-01 20:48:12.085 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find vehicle by id : 1
+2024-05-01 20:48:27.718 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find all vehicles.
+2024-05-01 20:48:27.822 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find vehicle by id : 1
+2024-05-01 20:48:27.861 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: init save vehicle plate/user: ABC123/1
+2024-05-01 20:48:31.057 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: init save vehicle plate/user: ABC123/1
+2024-05-01 20:48:31.211 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: saved vehicle plate/user: ABC123/1
+2024-05-01 20:48:31.239 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: init save vehicle plate/user: ABC123/1
+2024-05-01 20:48:31.373 [ERROR] [main] b.c.o.c.service.VehicleServiceImpl - user: null - Fail to save vehicle plate is present, plate: ABC123 - error: class br.com.omnilink.challange.exception.BadRequestException
+2024-05-01 20:48:31.395 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find vehicle by id : 1
+2024-05-01 20:51:25.542 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find all vehicles.
+2024-05-01 20:51:25.643 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find vehicle by id : 1
+2024-05-01 20:51:25.682 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: init save vehicle plate/user: ABC123/1
+2024-05-01 20:51:28.959 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: init save vehicle plate/user: ABC123/1
+2024-05-01 20:51:29.100 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: saved vehicle plate/user: ABC123/1
+2024-05-01 20:51:29.118 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: init save vehicle plate/user: ABC123/1
+2024-05-01 20:51:29.248 [ERROR] [main] b.c.o.c.service.VehicleServiceImpl - user: null - Fail to save vehicle plate is present, plate: ABC123 - error: class br.com.omnilink.challange.exception.BadRequestException
+2024-05-01 20:51:29.257 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find vehicle by id : 1
+2024-05-01 20:51:29.265 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find all vehicles.
+2024-05-01 20:52:02.750 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find all vehicles.
+2024-05-01 20:52:02.827 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find vehicle by id : 1
+2024-05-01 20:52:02.867 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: init save vehicle plate/user: ABC123/1
+2024-05-01 20:52:06.057 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: init save vehicle plate/user: ABC123/1
+2024-05-01 20:52:06.188 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: saved vehicle plate/user: ABC123/1
+2024-05-01 20:52:06.200 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: init save vehicle plate/user: ABC123/1
+2024-05-01 20:52:06.344 [ERROR] [main] b.c.o.c.service.VehicleServiceImpl - user: null - Fail to save vehicle plate is present, plate: ABC123 - error: class br.com.omnilink.challange.exception.BadRequestException
+2024-05-01 20:52:06.371 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find vehicle by id : 1
+2024-05-01 20:52:06.387 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find all vehicles by costumer id: 1
+2024-05-01 20:55:36.563 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: init delete vehicle: 1
+2024-05-01 20:55:36.597 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: finally delete vehicle: 1
+2024-05-01 20:55:49.675 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: init delete vehicle: 1
+2024-05-01 20:55:49.697 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: finally delete vehicle: 1
+2024-05-01 20:59:20.659 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: init update vehicle id: 1
+2024-05-01 21:02:54.332 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: init update vehicle id: 1
+2024-05-01 21:02:54.401 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: finally update vehicle id: 1
+2024-05-01 21:05:34.036 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: init delete vehicle: 1
+2024-05-01 21:05:34.059 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: finally delete vehicle: 1
+2024-05-01 21:05:34.113 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: init update vehicle id: 1
+2024-05-01 21:05:34.114 [ERROR] [main] b.c.o.c.service.VehicleServiceImpl - user: null - Fail to save update plate is present, plate: ABC123 - error: class br.com.omnilink.challange.exception.BadRequestException
+2024-05-01 21:05:34.132 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find all vehicles.
+2024-05-01 21:05:34.184 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: init update vehicle id: 1
+2024-05-01 21:05:34.195 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: finally update vehicle id: 1
+2024-05-01 21:05:34.245 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find vehicle by id : 1
+2024-05-01 21:05:34.278 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: init save vehicle plate/user: ABC123/1
+2024-05-01 21:05:37.482 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: init save vehicle plate/user: ABC123/1
+2024-05-01 21:05:37.603 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: saved vehicle plate/user: ABC123/1
+2024-05-01 21:05:37.612 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null action: init save vehicle plate/user: ABC123/1
+2024-05-01 21:05:37.739 [ERROR] [main] b.c.o.c.service.VehicleServiceImpl - user: null - Fail to save vehicle plate is present, plate: ABC123 - error: class br.com.omnilink.challange.exception.BadRequestException
+2024-05-01 21:05:37.762 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find vehicle by id : 1
+2024-05-01 21:05:37.775 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find all vehicles by costumer id: 1

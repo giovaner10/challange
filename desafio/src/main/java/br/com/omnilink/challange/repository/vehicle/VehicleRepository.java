@@ -10,6 +10,8 @@ public interface VehicleRepository extends JpaRepository<Vehicle, Integer> {
 
     boolean existsByPlate(String plate);
 
+    boolean existsByPlateAndId(String plate, Integer id);
+
     @Query("SELECT v FROM Vehicle v WHERE v.costumer.id = :id")
     List<Vehicle> findAllByCostumer(Integer id);
 }

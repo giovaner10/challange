@@ -14,14 +14,11 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.AbstractList;
 import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -41,7 +38,6 @@ class CostumerServiceImplTest {
     Costumer costumer = null;
     CostumerResponse costumerResponse = null;
     CostumerRequestCreat costumerRequest = null;
-
 
     @BeforeEach
     void setUp() {
@@ -99,8 +95,7 @@ class CostumerServiceImplTest {
     void save() {
         when(costumerRepository.existsByEmailOrCnpj("exemplo@example.com", "12345678901234")).thenReturn(false);
 
-        assertDoesNotThrow(()-> costumerService.save(costumerRequest));
-
+        assertDoesNotThrow(() -> costumerService.save(costumerRequest));
     }
 
 
@@ -108,7 +103,7 @@ class CostumerServiceImplTest {
     void dontSave() {
         when(costumerRepository.existsByEmailOrCnpj("exemplo@example.com", "12345678901234")).thenReturn(true);
 
-        assertThrows(BadRequestException.class, ()-> costumerService.save(costumerRequest));
+        assertThrows(BadRequestException.class, () -> costumerService.save(costumerRequest));
     }
 
 
@@ -118,7 +113,7 @@ class CostumerServiceImplTest {
 
         when(costumerRepository.existsByEmailOrCnpjAndId("exemplo@example.com", "12345678901234", 1)).thenReturn(false);
 
-        assertDoesNotThrow(()-> costumerService.update(costumerRequest, 1));
+        assertDoesNotThrow(() -> costumerService.update(costumerRequest, 1));
 
     }
 
@@ -126,7 +121,7 @@ class CostumerServiceImplTest {
     void updateDontExistingCostumer() {
         when(costumerRepository.findById(1)).thenReturn(Optional.empty());
 
-        assertThrows(ObjectNotFoundException.class, ()-> costumerService.update(costumerRequest, 1));
+        assertThrows(ObjectNotFoundException.class, () -> costumerService.update(costumerRequest, 1));
     }
 
     @Test
@@ -135,7 +130,7 @@ class CostumerServiceImplTest {
 
         when(costumerRepository.existsByEmailOrCnpjAndId("exemplo@example.com", "12345678901234", 1)).thenReturn(true);
 
-        assertThrows(BadRequestException.class, ()-> costumerService.update(costumerRequest, 1));
+        assertThrows(BadRequestException.class, () -> costumerService.update(costumerRequest, 1));
     }
 
 
@@ -143,14 +138,14 @@ class CostumerServiceImplTest {
     void delete() {
         when(costumerRepository.findById(1)).thenReturn(Optional.ofNullable(costumer));
 
-        assertDoesNotThrow(()-> costumerService.delete(1));
+        assertDoesNotThrow(() -> costumerService.delete(1));
     }
 
     @Test
     void deleteDontExistingCostumer() {
         when(costumerRepository.findById(1)).thenReturn(Optional.empty());
 
-        assertThrows(ObjectNotFoundException.class, ()-> costumerService.delete(1));
+        assertThrows(ObjectNotFoundException.class, () -> costumerService.delete(1));
     }
 
 }
