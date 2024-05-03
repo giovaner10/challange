@@ -16,7 +16,7 @@ spring:
   data:
     redis:
       host: localhost
-      port: 2006
+      port: 6379
 jwt:
    private:
      key: classpath:app.key

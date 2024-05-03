@@ -5,6 +5,7 @@ import br.com.omnilink.challange.DTO.response.CostumerResponse;
 import br.com.omnilink.challange.service.ICostumerService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,20 +26,17 @@ public class CostumerController {
 
     @GetMapping("/findall")
     @ResponseStatus(HttpStatus.OK)
-    //@Cacheable("findAll")
+    @Cacheable("findAll")
     public List<CostumerResponse> findAll() {
-        System.out.println("testando cache");
-        //logger.info("Listando tudo!");
         return costumerService.findAll();
     }
 
     @GetMapping("/finbyid/{id}")
     @ResponseStatus(HttpStatus.OK)
-   // @Cacheable("findById")
+    @Cacheable("findById")
     public CostumerResponse findById(@PathVariable Integer id) {
         return costumerService.findById(id);
     }
-
 
     @PutMapping("/update/{id}")
     @ResponseStatus(HttpStatus.OK)

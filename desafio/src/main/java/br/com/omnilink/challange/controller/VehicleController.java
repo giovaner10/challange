@@ -2,9 +2,7 @@ package br.com.omnilink.challange.controller;
 
 import br.com.omnilink.challange.DTO.request.vehicle.VehicleRequestCreat;
 import br.com.omnilink.challange.DTO.response.vehicle.VehicleResponse;
-import br.com.omnilink.challange.model.Vehicle;
-import br.com.omnilink.challange.service.VehicleServiceImpl;
-import com.fasterxml.jackson.core.JsonProcessingException;
+import br.com.omnilink.challange.service.IVehicleService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -18,11 +16,11 @@ import java.util.List;
 public class VehicleController {
 
     @Autowired
-    VehicleServiceImpl vehicleService;
+    IVehicleService vehicleService;
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public void save(@Valid @RequestBody VehicleRequestCreat request) throws JsonProcessingException {
+    public void save(@Valid @RequestBody VehicleRequestCreat request) {
         vehicleService.save(request);
     }
 
@@ -37,7 +35,6 @@ public class VehicleController {
     @ResponseStatus(HttpStatus.OK)
     @Cacheable("findAllVehicle")
     public List<VehicleResponse> findAll() {
-        //logger.info("Listando tudo!");
         return vehicleService.findAll();
     }
 
@@ -45,7 +42,6 @@ public class VehicleController {
     @ResponseStatus(HttpStatus.OK)
     @Cacheable("findAllVehicleByCostumer")
     public List<VehicleResponse> findAllByCostumer(@PathVariable Integer id) {
-        //logger.info("Listando tudo!");
         return vehicleService.findAllByCostumer(id);
     }
 

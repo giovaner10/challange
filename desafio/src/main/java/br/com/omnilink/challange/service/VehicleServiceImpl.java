@@ -10,7 +10,6 @@ import br.com.omnilink.challange.model.Vehicle;
 import br.com.omnilink.challange.repository.vehicle.VehicleRepository;
 import br.com.omnilink.challange.security.security.UserDetailsLogged;
 import br.com.omnilink.challange.validator.CepValidator;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +34,7 @@ public class VehicleServiceImpl implements IVehicleService{
 
     @Override
     @Transactional
-    public void save(VehicleRequestCreat request) throws JsonProcessingException {
+    public void save(VehicleRequestCreat request) {
         logger.info("user: {} action: init save vehicle plate/user: " + request.plate() + "/" + request.costumerId(), logged.getUsername());
 
         CepValidator.validate(request);
