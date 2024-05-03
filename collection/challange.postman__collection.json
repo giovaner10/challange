@@ -1,0 +1,497 @@
+{
+	"info": {
+		"_postman_id": "5cd10b6d-95d4-4de5-90ea-43469f7f1c9f",
+		"name": "challange",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"username\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "costumer",
+			"item": [
+				{
+					"name": "findall",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJjaGFsbGFuZ2UiLCJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTcxNDc4NjI5OCwiaWF0IjoxNzE0NzUwMjk4LCJzY29wZSI6IiJ9.rDMkm49CuCF1fJBGSMaEI7yqTMMYaXXoFBDZpKxqCLv16XNeKgDdAD0vfk2jufbjzsYZc81OU0pBj0fExDLCR6oLjq7zfPLHw3cVPMxiiktj4rUEOKKF1BNcJ6NkPSGewSp884nIaE3XZ-9tttVB9DEka1DNsIBGx0HGjWvEhR6xOl2U8AnsfcQ_2fLjbaXL_u_2p_rSydJvfOiSRMp5px24UgFCwwj1C2Ovf57A-OCwlpY0uVj3YKwuYkgnY-hwsngXZ5vMLdCdgMmTIPvyuaNG2xlRjGDiEGT9Y6131MAnfJNP1D9-tfVaLLq6gbZjb-M46SxZlGDmXpPLpk_Exw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/costumer/findall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"costumer",
+								"findall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "finbyid",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJjaGFsbGFuZ2UiLCJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTcxNDYyMDMyOSwiaWF0IjoxNzE0NTg0MzI5LCJzY29wZSI6IiJ9.KpNR_TEG6zA8U0P9oqruzNp0_HM4se89lRxAac66m2KmrxWwVm6GC0avk9JgNulaTWRlUgBLc00RaiDz5k9VTGUCG0SxskmBDsz5gsouasPxvnVEl9ASJVdWHvIUpnymepZRqHkkF3wjDdeUVUFynEBxiDc5Aje_ahh4P6VtFp0qugxDcTH943vHkO-A38RmP8fW4XgcAwhZl3kPRP4AUo2sp-3I-B36Qm4whGsNznW6UTCP3wLx43m8NZ14AoL82LK2b7FpGuOlNW0fn5mnGwDl4R5yzo832TdQ3w5K2178mdcqNrEFzmphlCHpujkb_Zk_GRsBWq3TESVZ59C8Nw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/costumer/finbyid/29",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"costumer",
+								"finbyid",
+								"29"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJjaGFsbGFuZ2UiLCJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTcxNDc4NjI5OCwiaWF0IjoxNzE0NzUwMjk4LCJzY29wZSI6IiJ9.rDMkm49CuCF1fJBGSMaEI7yqTMMYaXXoFBDZpKxqCLv16XNeKgDdAD0vfk2jufbjzsYZc81OU0pBj0fExDLCR6oLjq7zfPLHw3cVPMxiiktj4rUEOKKF1BNcJ6NkPSGewSp884nIaE3XZ-9tttVB9DEka1DNsIBGx0HGjWvEhR6xOl2U8AnsfcQ_2fLjbaXL_u_2p_rSydJvfOiSRMp5px24UgFCwwj1C2Ovf57A-OCwlpY0uVj3YKwuYkgnY-hwsngXZ5vMLdCdgMmTIPvyuaNG2xlRjGDiEGT9Y6131MAnfJNP1D9-tfVaLLq6gbZjb-M46SxZlGDmXpPLpk_Exw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"string\",\r\n  \"cnpj\": \"strings\",\r\n  \"email\": \"giovanerrr10@gmail.com\",\r\n  \"costumerType\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/costumer/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"costumer",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upadate",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJjaGFsbGFuZ2UiLCJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTcxNDc4NjI5OCwiaWF0IjoxNzE0NzUwMjk4LCJzY29wZSI6IiJ9.rDMkm49CuCF1fJBGSMaEI7yqTMMYaXXoFBDZpKxqCLv16XNeKgDdAD0vfk2jufbjzsYZc81OU0pBj0fExDLCR6oLjq7zfPLHw3cVPMxiiktj4rUEOKKF1BNcJ6NkPSGewSp884nIaE3XZ-9tttVB9DEka1DNsIBGx0HGjWvEhR6xOl2U8AnsfcQ_2fLjbaXL_u_2p_rSydJvfOiSRMp5px24UgFCwwj1C2Ovf57A-OCwlpY0uVj3YKwuYkgnY-hwsngXZ5vMLdCdgMmTIPvyuaNG2xlRjGDiEGT9Y6131MAnfJNP1D9-tfVaLLq6gbZjb-M46SxZlGDmXpPLpk_Exw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"string\",\r\n  \"cnpj\": \"string\",\r\n  \"email\": \"giovanerr10@gmail.com\",\r\n  \"costumerType\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/costumer/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"costumer",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJjaGFsbGFuZ2UiLCJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTcxNDc4NjI5OCwiaWF0IjoxNzE0NzUwMjk4LCJzY29wZSI6IiJ9.rDMkm49CuCF1fJBGSMaEI7yqTMMYaXXoFBDZpKxqCLv16XNeKgDdAD0vfk2jufbjzsYZc81OU0pBj0fExDLCR6oLjq7zfPLHw3cVPMxiiktj4rUEOKKF1BNcJ6NkPSGewSp884nIaE3XZ-9tttVB9DEka1DNsIBGx0HGjWvEhR6xOl2U8AnsfcQ_2fLjbaXL_u_2p_rSydJvfOiSRMp5px24UgFCwwj1C2Ovf57A-OCwlpY0uVj3YKwuYkgnY-hwsngXZ5vMLdCdgMmTIPvyuaNG2xlRjGDiEGT9Y6131MAnfJNP1D9-tfVaLLq6gbZjb-M46SxZlGDmXpPLpk_Exw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"string\",\r\n  \"cnpj\": \"string\",\r\n  \"email\": \"giovanerr10@gmail.com\",\r\n  \"costumerType\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/costumer/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"costumer",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vehicle",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJjaGFsbGFuZ2UiLCJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTcxNDc4NjI5OCwiaWF0IjoxNzE0NzUwMjk4LCJzY29wZSI6IiJ9.rDMkm49CuCF1fJBGSMaEI7yqTMMYaXXoFBDZpKxqCLv16XNeKgDdAD0vfk2jufbjzsYZc81OU0pBj0fExDLCR6oLjq7zfPLHw3cVPMxiiktj4rUEOKKF1BNcJ6NkPSGewSp884nIaE3XZ-9tttVB9DEka1DNsIBGx0HGjWvEhR6xOl2U8AnsfcQ_2fLjbaXL_u_2p_rSydJvfOiSRMp5px24UgFCwwj1C2Ovf57A-OCwlpY0uVj3YKwuYkgnY-hwsngXZ5vMLdCdgMmTIPvyuaNG2xlRjGDiEGT9Y6131MAnfJNP1D9-tfVaLLq6gbZjb-M46SxZlGDmXpPLpk_Exw"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"plate\": \"string\",\r\n  \"model\": \"string\",\r\n  \"modelYear\": 1900,\r\n  \"city\": \"Caturité\",\r\n  \"state\": \"PB\",\r\n  \"cep\": \"58455000\",\r\n  \"brand\": 1,\r\n  \"category\": 1,\r\n  \"fuelType\": 1,\r\n  \"status\": 1,\r\n  \"costumerId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vehicle/save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJjaGFsbGFuZ2UiLCJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTcxNDc4NjI5OCwiaWF0IjoxNzE0NzUwMjk4LCJzY29wZSI6IiJ9.rDMkm49CuCF1fJBGSMaEI7yqTMMYaXXoFBDZpKxqCLv16XNeKgDdAD0vfk2jufbjzsYZc81OU0pBj0fExDLCR6oLjq7zfPLHw3cVPMxiiktj4rUEOKKF1BNcJ6NkPSGewSp884nIaE3XZ-9tttVB9DEka1DNsIBGx0HGjWvEhR6xOl2U8AnsfcQ_2fLjbaXL_u_2p_rSydJvfOiSRMp5px24UgFCwwj1C2Ovf57A-OCwlpY0uVj3YKwuYkgnY-hwsngXZ5vMLdCdgMmTIPvyuaNG2xlRjGDiEGT9Y6131MAnfJNP1D9-tfVaLLq6gbZjb-M46SxZlGDmXpPLpk_Exw"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"plate\": \"string\",\r\n  \"model\": \"string\",\r\n  \"modelYear\": 1900,\r\n  \"city\": \"string\",\r\n  \"state\": \"string\",\r\n  \"cep\": \"string\",\r\n  \"brand\": 1,\r\n  \"category\": 1,\r\n  \"fuelType\": 1,\r\n  \"status\": 1,\r\n  \"costumerId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vehicle/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJjaGFsbGFuZ2UiLCJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTcxNDc4NjI5OCwiaWF0IjoxNzE0NzUwMjk4LCJzY29wZSI6IiJ9.rDMkm49CuCF1fJBGSMaEI7yqTMMYaXXoFBDZpKxqCLv16XNeKgDdAD0vfk2jufbjzsYZc81OU0pBj0fExDLCR6oLjq7zfPLHw3cVPMxiiktj4rUEOKKF1BNcJ6NkPSGewSp884nIaE3XZ-9tttVB9DEka1DNsIBGx0HGjWvEhR6xOl2U8AnsfcQ_2fLjbaXL_u_2p_rSydJvfOiSRMp5px24UgFCwwj1C2Ovf57A-OCwlpY0uVj3YKwuYkgnY-hwsngXZ5vMLdCdgMmTIPvyuaNG2xlRjGDiEGT9Y6131MAnfJNP1D9-tfVaLLq6gbZjb-M46SxZlGDmXpPLpk_Exw"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"plate\": \"string\",\r\n  \"model\": \"string\",\r\n  \"modelYear\": 1900,\r\n  \"city\": \"string\",\r\n  \"state\": \"string\",\r\n  \"cep\": \"string\",\r\n  \"brand\": 1,\r\n  \"category\": 1,\r\n  \"fuelType\": 1,\r\n  \"status\": 1,\r\n  \"costumerId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vehicle/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find all by costumer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJjaGFsbGFuZ2UiLCJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTcxNDc4NjgwOCwiaWF0IjoxNzE0NzUwODA4LCJzY29wZSI6IiJ9.f5HOvP_obW1RDavdGCtMdl8tgC_DxnFUBI-joEaW-bvFv0JbXoz3D2TssRPoCWfVtUnNlMnYYxtQYsRes0hbBq_wAKFwvkDC851zQq4g3eY0Por3ScPxauO5o8CVruHI4kTWna5pokXE8uBTgNlF9LqzwlntclTL8aeH_fS3EfO4tAQOldlnzW7G4z3VIu_dXhumnbqjyiASvuGqhrJoEtudBK0NNqXh8UU5Zpm9A9Xuur1LtECeWtKeAxLZQMFNQGU5EyaVmqHpGfUZUGP50KeGnBA6l_PmHl9RDeKozaSIXkl4Pp-HEhd2yGWQlDbt9uW3HAkFCLpr3WH_oEiKBQ"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"plate\": \"string\",\r\n  \"model\": \"string\",\r\n  \"modelYear\": 1900,\r\n  \"city\": \"string\",\r\n  \"state\": \"string\",\r\n  \"cep\": \"string\",\r\n  \"brand\": 1,\r\n  \"category\": 1,\r\n  \"fuelType\": 1,\r\n  \"status\": 1,\r\n  \"costumerId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vehicle/findallbycostumer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"findallbycostumer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find all by costumer Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJjaGFsbGFuZ2UiLCJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTcxNDc4NjgwOCwiaWF0IjoxNzE0NzUwODA4LCJzY29wZSI6IiJ9.f5HOvP_obW1RDavdGCtMdl8tgC_DxnFUBI-joEaW-bvFv0JbXoz3D2TssRPoCWfVtUnNlMnYYxtQYsRes0hbBq_wAKFwvkDC851zQq4g3eY0Por3ScPxauO5o8CVruHI4kTWna5pokXE8uBTgNlF9LqzwlntclTL8aeH_fS3EfO4tAQOldlnzW7G4z3VIu_dXhumnbqjyiASvuGqhrJoEtudBK0NNqXh8UU5Zpm9A9Xuur1LtECeWtKeAxLZQMFNQGU5EyaVmqHpGfUZUGP50KeGnBA6l_PmHl9RDeKozaSIXkl4Pp-HEhd2yGWQlDbt9uW3HAkFCLpr3WH_oEiKBQ"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"plate\": \"string\",\r\n  \"model\": \"string\",\r\n  \"modelYear\": 1900,\r\n  \"city\": \"string\",\r\n  \"state\": \"string\",\r\n  \"cep\": \"string\",\r\n  \"brand\": 1,\r\n  \"category\": 1,\r\n  \"fuelType\": 1,\r\n  \"status\": 1,\r\n  \"costumerId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vehicle/findall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"findall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "find by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJjaGFsbGFuZ2UiLCJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTcxNDc4NjgwOCwiaWF0IjoxNzE0NzUwODA4LCJzY29wZSI6IiJ9.f5HOvP_obW1RDavdGCtMdl8tgC_DxnFUBI-joEaW-bvFv0JbXoz3D2TssRPoCWfVtUnNlMnYYxtQYsRes0hbBq_wAKFwvkDC851zQq4g3eY0Por3ScPxauO5o8CVruHI4kTWna5pokXE8uBTgNlF9LqzwlntclTL8aeH_fS3EfO4tAQOldlnzW7G4z3VIu_dXhumnbqjyiASvuGqhrJoEtudBK0NNqXh8UU5Zpm9A9Xuur1LtECeWtKeAxLZQMFNQGU5EyaVmqHpGfUZUGP50KeGnBA6l_PmHl9RDeKozaSIXkl4Pp-HEhd2yGWQlDbt9uW3HAkFCLpr3WH_oEiKBQ"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"plate\": \"string\",\r\n  \"model\": \"string\",\r\n  \"modelYear\": 1900,\r\n  \"city\": \"string\",\r\n  \"state\": \"string\",\r\n  \"cep\": \"string\",\r\n  \"brand\": 1,\r\n  \"category\": 1,\r\n  \"fuelType\": 1,\r\n  \"status\": 1,\r\n  \"costumerId\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/vehicle/finbyid/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicle",
+								"finbyid",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "actuator",
+			"item": [
+				{
+					"name": "actuator",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJjaGFsbGFuZ2UiLCJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTcxNDc4NjI5OCwiaWF0IjoxNzE0NzUwMjk4LCJzY29wZSI6IiJ9.rDMkm49CuCF1fJBGSMaEI7yqTMMYaXXoFBDZpKxqCLv16XNeKgDdAD0vfk2jufbjzsYZc81OU0pBj0fExDLCR6oLjq7zfPLHw3cVPMxiiktj4rUEOKKF1BNcJ6NkPSGewSp884nIaE3XZ-9tttVB9DEka1DNsIBGx0HGjWvEhR6xOl2U8AnsfcQ_2fLjbaXL_u_2p_rSydJvfOiSRMp5px24UgFCwwj1C2Ovf57A-OCwlpY0uVj3YKwuYkgnY-hwsngXZ5vMLdCdgMmTIPvyuaNG2xlRjGDiEGT9Y6131MAnfJNP1D9-tfVaLLq6gbZjb-M46SxZlGDmXpPLpk_Exw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/actuator",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actuator"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "health",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJjaGFsbGFuZ2UiLCJzdWIiOiJ1c2VybmFtZSIsImV4cCI6MTcxNDc4NjI5OCwiaWF0IjoxNzE0NzUwMjk4LCJzY29wZSI6IiJ9.rDMkm49CuCF1fJBGSMaEI7yqTMMYaXXoFBDZpKxqCLv16XNeKgDdAD0vfk2jufbjzsYZc81OU0pBj0fExDLCR6oLjq7zfPLHw3cVPMxiiktj4rUEOKKF1BNcJ6NkPSGewSp884nIaE3XZ-9tttVB9DEka1DNsIBGx0HGjWvEhR6xOl2U8AnsfcQ_2fLjbaXL_u_2p_rSydJvfOiSRMp5px24UgFCwwj1C2Ovf57A-OCwlpY0uVj3YKwuYkgnY-hwsngXZ5vMLdCdgMmTIPvyuaNG2xlRjGDiEGT9Y6131MAnfJNP1D9-tfVaLLq6gbZjb-M46SxZlGDmXpPLpk_Exw",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/actuator/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
