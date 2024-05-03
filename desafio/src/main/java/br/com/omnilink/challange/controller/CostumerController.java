@@ -2,7 +2,6 @@ package br.com.omnilink.challange.controller;
 
 import br.com.omnilink.challange.DTO.request.costumer.CostumerRequestCreat;
 import br.com.omnilink.challange.DTO.response.CostumerResponse;
-import br.com.omnilink.challange.model.Costumer;
 import br.com.omnilink.challange.service.ICostumerService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

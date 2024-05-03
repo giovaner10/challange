@@ -1,9 +1,11 @@
 package br.com.omnilink.challange.security.model;
 
+import lombok.Builder;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Table("USERS")
+@Builder
 public class User {
   @Id
   private String username;

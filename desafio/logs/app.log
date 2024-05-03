@@ -247,3 +247,132 @@
 2024-05-01 21:05:37.739 [ERROR] [main] b.c.o.c.service.VehicleServiceImpl - user: null - Fail to save vehicle plate is present, plate: ABC123 - error: class br.com.omnilink.challange.exception.BadRequestException
 2024-05-01 21:05:37.762 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find vehicle by id : 1
 2024-05-01 21:05:37.775 [INFO ] [main] b.c.o.c.service.VehicleServiceImpl - user: null - action: find all vehicles by costumer id: 1
+2024-05-02 20:54:02.371 [INFO ] [main] b.c.o.c.i.CostumerIntegration - Starting CostumerIntegration using Java 17.0.7 with PID 9340 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 20:54:02.372 [DEBUG] [main] b.c.o.c.i.CostumerIntegration - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 20:54:02.373 [INFO ] [main] b.c.o.c.i.CostumerIntegration - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:00:35.373 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 788 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:00:35.374 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:00:35.376 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:00:54.598 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 19.969 seconds (process running for 23.103)
+2024-05-02 21:00:55.219 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 788 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:00:55.220 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:00:55.222 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:00:59.364 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 4.291 seconds (process running for 27.868)
+2024-05-02 21:03:15.902 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 13392 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:03:15.904 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:03:15.905 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:03:35.356 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 20.202 seconds (process running for 23.269)
+2024-05-02 21:03:35.928 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 13392 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:03:35.930 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:03:35.930 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:03:39.774 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 3.912 seconds (process running for 27.688)
+2024-05-02 21:05:19.913 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 3980 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:05:19.914 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:05:19.915 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:05:38.882 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 19.646 seconds (process running for 22.593)
+2024-05-02 21:05:39.484 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 3980 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:05:39.484 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:05:39.485 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:05:43.472 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 4.067 seconds (process running for 27.182)
+2024-05-02 21:05:45.728 [INFO ] [http-nio-auto-2-exec-2] b.c.o.c.service.CostumerServiceImpl - user: username - action: find by id: 1
+2024-05-02 21:05:45.827 [ERROR] [http-nio-auto-2-exec-2] b.c.o.c.service.CostumerServiceImpl - user: username - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-02 21:08:40.441 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 11380 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:08:40.442 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:08:40.443 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:08:59.977 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 20.235 seconds (process running for 23.208)
+2024-05-02 21:09:00.536 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 11380 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:09:00.537 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:09:00.537 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:09:04.892 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 4.418 seconds (process running for 28.123)
+2024-05-02 21:11:23.648 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 9980 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:11:23.649 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:11:23.651 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:11:50.585 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 27.74 seconds (process running for 30.618)
+2024-05-02 21:11:51.104 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 9980 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:11:51.104 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:11:51.105 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:11:54.808 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 3.776 seconds (process running for 34.84)
+2024-05-02 21:11:57.240 [INFO ] [http-nio-auto-2-exec-1] b.c.o.c.service.CostumerServiceImpl - user: username - action: find by id: 1
+2024-05-02 21:12:50.365 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 11568 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:12:50.366 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:12:50.368 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:13:09.549 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 19.907 seconds (process running for 22.801)
+2024-05-02 21:13:10.114 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 11568 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:13:10.114 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:13:10.114 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:13:14.184 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 4.138 seconds (process running for 27.435)
+2024-05-02 21:13:16.563 [INFO ] [http-nio-auto-2-exec-1] b.c.o.c.service.CostumerServiceImpl - user: username - action: find by id: 1
+2024-05-02 21:17:22.884 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 5624 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:17:22.885 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:17:22.887 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:17:41.216 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 19.028 seconds (process running for 21.911)
+2024-05-02 21:17:41.749 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 5624 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:17:41.749 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:17:41.750 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:17:45.658 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 3.973 seconds (process running for 26.353)
+2024-05-02 21:17:48.075 [INFO ] [http-nio-auto-2-exec-2] b.c.o.c.service.CostumerServiceImpl - user: username - action: find by id: 1
+2024-05-02 21:17:48.185 [ERROR] [http-nio-auto-2-exec-2] b.c.o.c.service.CostumerServiceImpl - user: username - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-02 21:18:54.078 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 13832 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:18:54.080 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:18:54.082 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:19:17.708 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 24.447 seconds (process running for 27.584)
+2024-05-02 21:19:18.248 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 13832 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:19:18.248 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:19:18.249 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:19:22.140 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 3.961 seconds (process running for 32.016)
+2024-05-02 21:19:24.329 [INFO ] [http-nio-auto-2-exec-1] b.c.o.c.service.CostumerServiceImpl - user: username - action: find by id: 1
+2024-05-02 21:19:24.389 [ERROR] [http-nio-auto-2-exec-1] b.c.o.c.service.CostumerServiceImpl - user: username - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-02 21:19:24.713 [INFO ] [http-nio-auto-2-exec-2] b.c.o.c.service.CostumerServiceImpl - user: username - action: find by id: 1
+2024-05-02 21:19:24.720 [ERROR] [http-nio-auto-2-exec-2] b.c.o.c.service.CostumerServiceImpl - user: username - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-02 21:20:39.744 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 13756 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:20:39.745 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:20:39.746 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:20:59.011 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 19.969 seconds (process running for 22.921)
+2024-05-02 21:20:59.538 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 13756 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:20:59.539 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:20:59.539 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:21:03.582 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 4.114 seconds (process running for 27.492)
+2024-05-02 21:21:05.817 [INFO ] [http-nio-auto-2-exec-1] b.c.o.c.service.CostumerServiceImpl - user: username - action: find by id: 1
+2024-05-02 21:21:05.920 [ERROR] [http-nio-auto-2-exec-1] b.c.o.c.service.CostumerServiceImpl - user: username - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-02 21:21:38.345 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 9972 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:21:38.346 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:21:38.348 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:21:56.681 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 19.065 seconds (process running for 22.005)
+2024-05-02 21:21:57.190 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 9972 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:21:57.191 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:21:57.191 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:22:01.134 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 4.011 seconds (process running for 26.458)
+2024-05-02 21:22:03.562 [INFO ] [http-nio-auto-2-exec-1] b.c.o.c.service.CostumerServiceImpl - user: username - action: find by id: 1
+2024-05-02 21:22:03.649 [ERROR] [http-nio-auto-2-exec-1] b.c.o.c.service.CostumerServiceImpl - user: username - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-02 21:39:48.462 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 4264 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:39:48.464 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:39:48.466 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:40:06.956 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 19.231 seconds (process running for 22.16)
+2024-05-02 21:40:07.463 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 4264 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:40:07.464 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:40:07.464 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:40:11.344 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 3.949 seconds (process running for 26.547)
+2024-05-02 21:40:13.852 [INFO ] [http-nio-auto-2-exec-1] b.c.o.c.service.CostumerServiceImpl - user: username action: init save costumer email: exemplo@example.com
+2024-05-02 21:40:14.160 [INFO ] [http-nio-auto-2-exec-1] b.c.o.c.service.CostumerServiceImpl - user: username - action: finally save costumer email: exemplo@example.com
+2024-05-02 21:48:11.615 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 6388 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:48:11.620 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:48:11.622 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:48:33.687 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 22.85 seconds (process running for 26.581)
+2024-05-02 21:48:34.232 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 6388 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:48:34.232 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:48:34.233 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:48:38.163 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 4.015 seconds (process running for 31.056)
+2024-05-02 21:48:40.606 [INFO ] [http-nio-auto-2-exec-1] b.c.o.c.service.CostumerServiceImpl - user: username - action: find by id: 1
+2024-05-02 21:48:41.062 [INFO ] [http-nio-auto-2-exec-2] b.c.o.c.service.CostumerServiceImpl - user: username - action: init delete costumer: 1
+2024-05-02 21:48:41.088 [INFO ] [http-nio-auto-2-exec-2] b.c.o.c.service.CostumerServiceImpl - user: username - action: finally delete costumer: 1
+2024-05-02 21:48:41.228 [INFO ] [http-nio-auto-2-exec-2] b.c.o.c.service.CostumerServiceImpl - user: username - action: find by id: 1
+2024-05-02 21:48:41.232 [ERROR] [http-nio-auto-2-exec-2] b.c.o.c.service.CostumerServiceImpl - user: username - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.ObjectNotFoundException
+2024-05-02 21:53:06.503 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 8640 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:53:06.504 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:53:06.505 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:53:28.661 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 22.89 seconds (process running for 25.905)
+2024-05-02 21:53:29.241 [INFO ] [main] b.c.o.c.integration.CostumerIT - Starting CostumerIT using Java 17.0.7 with PID 8640 (started by giovane in C:\Users\giovane\Downloads\desafion\desafio)
+2024-05-02 21:53:29.242 [DEBUG] [main] b.c.o.c.integration.CostumerIT - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-02 21:53:29.242 [INFO ] [main] b.c.o.c.integration.CostumerIT - No active profile set, falling back to 1 default profile: "default"
+2024-05-02 21:53:33.862 [INFO ] [main] b.c.o.c.integration.CostumerIT - Started CostumerIT in 4.721 seconds (process running for 31.106)
+2024-05-02 21:53:36.211 [INFO ] [http-nio-auto-2-exec-1] b.c.o.c.service.CostumerServiceImpl - user: username - action: find all.
