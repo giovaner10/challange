@@ -1,14 +1,15 @@
-package br.com.omnilink.challange.service;
+package br.com.omnilink.challange.service.vehicle;
 
-import br.com.omnilink.challange.DTO.request.vehicle.VehicleRequestCreat;
+import br.com.omnilink.challange.DTO.request.vehicle.VehicleRequest;
 import br.com.omnilink.challange.DTO.response.vehicle.VehicleResponse;
-import br.com.omnilink.challange.exception.BadRequestException;
-import br.com.omnilink.challange.exception.ObjectNotFoundException;
+import br.com.omnilink.challange.exception.model.BadRequestException;
+import br.com.omnilink.challange.exception.model.ObjectNotFoundException;
 import br.com.omnilink.challange.mapper.vehicle.VehicleMapper;
 import br.com.omnilink.challange.model.Costumer;
 import br.com.omnilink.challange.model.Vehicle;
 import br.com.omnilink.challange.repository.vehicle.VehicleRepository;
 import br.com.omnilink.challange.security.security.UserDetailsLogged;
+import br.com.omnilink.challange.service.costumer.ICostumerService;
 import br.com.omnilink.challange.validator.CepValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class VehicleServiceImpl implements IVehicleService{
+public class VehicleServiceImpl implements IVehicleService {
 
     @Autowired
     VehicleRepository vehicleRepository;
@@ -34,7 +35,7 @@ public class VehicleServiceImpl implements IVehicleService{
 
     @Override
     @Transactional
-    public void save(VehicleRequestCreat request) {
+    public void save(VehicleRequest request) {
         logger.info("user: {} action: init save vehicle plate/user: " + request.plate() + "/" + request.costumerId(), logged.getUsername());
 
         CepValidator.validate(request);
@@ -81,7 +82,7 @@ public class VehicleServiceImpl implements IVehicleService{
 
     @Override
     @Transactional
-    public void update(VehicleRequestCreat request, Integer id) {
+    public void update(VehicleRequest request, Integer id) {
         logger.info("user: {} - action: init update vehicle id: " + id, logged.getUsername());
 
         existByPlateAndId(request.plate(), id);

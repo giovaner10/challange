@@ -1,7 +1,7 @@
 package br.com.omnilink.challange.factory;
 
-import br.com.omnilink.challange.DTO.request.costumer.CostumerRequestCreat;
-import br.com.omnilink.challange.DTO.response.CostumerResponse;
+import br.com.omnilink.challange.DTO.request.costumer.CostumerRequest;
+import br.com.omnilink.challange.DTO.response.costumer.CostumerResponse;
 import br.com.omnilink.challange.enums.customer.CostumerType;
 import br.com.omnilink.challange.model.Costumer;
 
@@ -17,8 +17,8 @@ public class CostumerFactory {
                 .build();
     }
 
-    public static CostumerRequestCreat getRequest() {
-        return CostumerRequestCreat.builder()
+    public static CostumerRequest getRequest() {
+        return CostumerRequest.builder()
                 .name("Exemplo")
                 .cnpj("12345678901234")
                 .email("exemplo@example.com")

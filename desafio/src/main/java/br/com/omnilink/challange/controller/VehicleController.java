@@ -1,8 +1,8 @@
 package br.com.omnilink.challange.controller;
 
-import br.com.omnilink.challange.DTO.request.vehicle.VehicleRequestCreat;
+import br.com.omnilink.challange.DTO.request.vehicle.VehicleRequest;
 import br.com.omnilink.challange.DTO.response.vehicle.VehicleResponse;
-import br.com.omnilink.challange.service.IVehicleService;
+import br.com.omnilink.challange.service.vehicle.IVehicleService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -20,7 +20,7 @@ public class VehicleController {
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public void save(@Valid @RequestBody VehicleRequestCreat request) {
+    public void save(@Valid @RequestBody VehicleRequest request) {
         vehicleService.save(request);
     }
 
@@ -47,7 +47,7 @@ public class VehicleController {
 
     @PutMapping("/update/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void update(@PathVariable Integer id,@Valid @RequestBody VehicleRequestCreat request) {
+    public void update(@PathVariable Integer id,@Valid @RequestBody VehicleRequest request) {
         vehicleService.update(request, id);
     }
 

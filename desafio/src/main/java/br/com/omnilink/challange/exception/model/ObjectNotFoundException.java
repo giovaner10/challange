@@ -1,4 +1,4 @@
-package br.com.omnilink.challange.exception;
+package br.com.omnilink.challange.exception.model;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

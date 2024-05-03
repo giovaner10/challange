@@ -1,13 +1,14 @@
 package br.com.omnilink.challange.service;
 
-import br.com.omnilink.challange.DTO.request.costumer.CostumerRequestCreat;
-import br.com.omnilink.challange.DTO.response.CostumerResponse;
-import br.com.omnilink.challange.exception.BadRequestException;
-import br.com.omnilink.challange.exception.ObjectNotFoundException;
+import br.com.omnilink.challange.DTO.request.costumer.CostumerRequest;
+import br.com.omnilink.challange.DTO.response.costumer.CostumerResponse;
+import br.com.omnilink.challange.exception.model.BadRequestException;
+import br.com.omnilink.challange.exception.model.ObjectNotFoundException;
 import br.com.omnilink.challange.factory.CostumerFactory;
 import br.com.omnilink.challange.model.Costumer;
 import br.com.omnilink.challange.repository.costumer.CostumerRepository;
 import br.com.omnilink.challange.security.security.UserDetailsLogged;
+import br.com.omnilink.challange.service.costumer.CostumerServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -37,7 +38,7 @@ class CostumerServiceImplTest {
 
     Costumer costumer = null;
     CostumerResponse costumerResponse = null;
-    CostumerRequestCreat costumerRequest = null;
+    CostumerRequest costumerRequest = null;
 
     @BeforeEach
     void setUp() {

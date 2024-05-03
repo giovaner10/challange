@@ -1,6 +1,6 @@
 package br.com.omnilink.challange.mapper.vehicle;
 
-import br.com.omnilink.challange.DTO.request.vehicle.VehicleRequestCreat;
+import br.com.omnilink.challange.DTO.request.vehicle.VehicleRequest;
 import br.com.omnilink.challange.DTO.response.vehicle.VehicleResponse;
 import br.com.omnilink.challange.enums.vehicle.VehicleBrand;
 import br.com.omnilink.challange.enums.vehicle.VehicleCategory;
@@ -14,7 +14,7 @@ import java.time.LocalDate;
 
 public class VehicleMapper {
 
-    public static Vehicle toEntity(VehicleRequestCreat request, Costumer costumer) {
+    public static Vehicle toEntity(VehicleRequest request, Costumer costumer) {
         return Vehicle.builder()
                 .plate(request.plate())
                 .model(request.model())
@@ -30,7 +30,7 @@ public class VehicleMapper {
                 .build();
     }
 
-    public static Vehicle toEntityUpdate(VehicleRequestCreat request) {
+    public static Vehicle toEntityUpdate(VehicleRequest request) {
         return Vehicle.builder()
                 .plate(request.plate())
                 .model(request.model())

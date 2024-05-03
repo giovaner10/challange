@@ -1,6 +1,6 @@
 package br.com.omnilink.challange.security.security;
 
-import br.com.omnilink.challange.exception.ObjectNotFoundException;
+import br.com.omnilink.challange.exception.model.ObjectNotFoundException;
 import br.com.omnilink.challange.security.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

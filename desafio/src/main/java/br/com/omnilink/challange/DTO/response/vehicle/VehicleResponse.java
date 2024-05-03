@@ -1,6 +1,6 @@
 package br.com.omnilink.challange.DTO.response.vehicle;
 
-import br.com.omnilink.challange.DTO.response.CostumerResponse;
+import br.com.omnilink.challange.DTO.response.costumer.CostumerResponse;
 import lombok.Builder;
 
 import java.io.Serializable;

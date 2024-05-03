@@ -1,5 +1,9 @@
 package br.com.omnilink.challange.exception;
 
+import br.com.omnilink.challange.exception.model.BadRequestException;
+import br.com.omnilink.challange.exception.model.BadRequestExceptionDetails;
+import br.com.omnilink.challange.exception.model.ObjectNotFoundException;
+import br.com.omnilink.challange.exception.model.TypetNotFoundException;
 import jakarta.validation.UnexpectedTypeException;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;

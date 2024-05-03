@@ -1,7 +1,7 @@
 package br.com.omnilink.challange.repository.costumer;
 
 import br.com.omnilink.challange.DB.ConnectionSession;
-import br.com.omnilink.challange.exception.BadRequestException;
+import br.com.omnilink.challange.exception.model.BadRequestException;
 import br.com.omnilink.challange.model.Costumer;
 import jakarta.transaction.Transactional;
 import org.hibernate.Session;

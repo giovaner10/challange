@@ -1,6 +1,6 @@
-package br.com.omnilink.challange.service;
+package br.com.omnilink.challange.service.vehicle;
 
-import br.com.omnilink.challange.DTO.request.vehicle.VehicleRequestCreat;
+import br.com.omnilink.challange.DTO.request.vehicle.VehicleRequest;
 import br.com.omnilink.challange.DTO.response.vehicle.VehicleResponse;
 
 import java.util.List;
@@ -13,9 +13,9 @@ public interface IVehicleService {
 
     List<VehicleResponse> findAllByCostumer(Integer id);
 
-    void save(VehicleRequestCreat request);
+    void save(VehicleRequest request);
 
-    void update(VehicleRequestCreat request, Integer id);
+    void update(VehicleRequest request, Integer id);
 
     void delete(Integer id);
 }

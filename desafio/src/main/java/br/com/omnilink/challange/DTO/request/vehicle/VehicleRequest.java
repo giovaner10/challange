@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 
 @Builder
-public record VehicleRequestCreat(
+public record VehicleRequest(
 
         @NotBlank String plate,
 

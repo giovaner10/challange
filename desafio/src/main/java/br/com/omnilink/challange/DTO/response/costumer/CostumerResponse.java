@@ -1,4 +1,4 @@
-package br.com.omnilink.challange.DTO.response;
+package br.com.omnilink.challange.DTO.response.costumer;
 
 import br.com.omnilink.challange.enums.customer.CostumerType;
 import lombok.Builder;

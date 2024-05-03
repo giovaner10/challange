@@ -1,7 +1,7 @@
 package br.com.omnilink.challange.integration;
 
-import br.com.omnilink.challange.DTO.request.costumer.CostumerRequestCreat;
-import br.com.omnilink.challange.DTO.response.CostumerResponse;
+import br.com.omnilink.challange.DTO.request.costumer.CostumerRequest;
+import br.com.omnilink.challange.DTO.response.costumer.CostumerResponse;
 import br.com.omnilink.challange.factory.CostumerFactory;
 import br.com.omnilink.challange.model.Costumer;
 import br.com.omnilink.challange.repository.costumer.CostumerRepository;
@@ -75,7 +75,7 @@ public class CostumerIT {
     void save_ReturnVoid_WhenUnccessful() {
         userRepository.save(USER);
 
-        CostumerRequestCreat request = CostumerFactory.getRequest();
+        CostumerRequest request = CostumerFactory.getRequest();
 
         ResponseEntity<Void> entity = testRestTemplate.postForEntity("/costumer/save", request, Void.class);
 

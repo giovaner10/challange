@@ -1,13 +1,15 @@
 package br.com.omnilink.challange.service;
 
-import br.com.omnilink.challange.DTO.request.vehicle.VehicleRequestCreat;
+import br.com.omnilink.challange.DTO.request.vehicle.VehicleRequest;
 import br.com.omnilink.challange.DTO.response.vehicle.VehicleResponse;
-import br.com.omnilink.challange.exception.BadRequestException;
-import br.com.omnilink.challange.exception.ObjectNotFoundException;
+import br.com.omnilink.challange.exception.model.BadRequestException;
+import br.com.omnilink.challange.exception.model.ObjectNotFoundException;
 import br.com.omnilink.challange.factory.VehicleFactory;
 import br.com.omnilink.challange.model.Vehicle;
 import br.com.omnilink.challange.repository.vehicle.VehicleRepository;
 import br.com.omnilink.challange.security.security.UserDetailsLogged;
+import br.com.omnilink.challange.service.costumer.ICostumerService;
+import br.com.omnilink.challange.service.vehicle.VehicleServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -41,7 +43,7 @@ class VehicleServiceImplTest {
 
     Vehicle vehicle = null;
     VehicleResponse vehicleResponse = null;
-    VehicleRequestCreat vehicleRequest = null;
+    VehicleRequest vehicleRequest = null;
 
     @BeforeEach
     void setUp() {

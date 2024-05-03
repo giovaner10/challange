@@ -1,6 +1,6 @@
 package br.com.omnilink.challange.enums.vehicle;
 
-import br.com.omnilink.challange.exception.TypetNotFoundException;
+import br.com.omnilink.challange.exception.model.TypetNotFoundException;
 import lombok.Getter;
 
 import java.util.Arrays;

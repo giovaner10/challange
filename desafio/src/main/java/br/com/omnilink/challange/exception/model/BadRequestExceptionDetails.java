@@ -1,4 +1,4 @@
-package br.com.omnilink.challange.exception;
+package br.com.omnilink.challange.exception.model;
 
 import lombok.Getter;
 import lombok.experimental.SuperBuilder;

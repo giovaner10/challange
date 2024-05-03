@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 
 @Builder
-public record CostumerRequestCreat(
+public record CostumerRequest(
         @NotBlank String name,
 
         @NotBlank String cnpj,

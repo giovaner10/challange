@@ -1,8 +1,8 @@
 package br.com.omnilink.challange.controller;
 
-import br.com.omnilink.challange.DTO.request.costumer.CostumerRequestCreat;
-import br.com.omnilink.challange.DTO.response.CostumerResponse;
-import br.com.omnilink.challange.service.ICostumerService;
+import br.com.omnilink.challange.DTO.request.costumer.CostumerRequest;
+import br.com.omnilink.challange.DTO.response.costumer.CostumerResponse;
+import br.com.omnilink.challange.service.costumer.ICostumerService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -20,7 +20,7 @@ public class CostumerController {
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public void save(@Valid @RequestBody CostumerRequestCreat request) {
+    public void save(@Valid @RequestBody CostumerRequest request) {
         costumerService.save(request);
     }
 
@@ -40,7 +40,7 @@ public class CostumerController {
 
     @PutMapping("/update/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void update(@PathVariable Integer id, @Valid @RequestBody CostumerRequestCreat request) {
+    public void update(@PathVariable Integer id, @Valid @RequestBody CostumerRequest request) {
         costumerService.update(request, id);
     }
 

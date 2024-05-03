@@ -1,9 +1,9 @@
-package br.com.omnilink.challange.service;
+package br.com.omnilink.challange.service.costumer;
 
-import br.com.omnilink.challange.DTO.request.costumer.CostumerRequestCreat;
-import br.com.omnilink.challange.DTO.response.CostumerResponse;
-import br.com.omnilink.challange.exception.BadRequestException;
-import br.com.omnilink.challange.exception.ObjectNotFoundException;
+import br.com.omnilink.challange.DTO.request.costumer.CostumerRequest;
+import br.com.omnilink.challange.DTO.response.costumer.CostumerResponse;
+import br.com.omnilink.challange.exception.model.BadRequestException;
+import br.com.omnilink.challange.exception.model.ObjectNotFoundException;
 import br.com.omnilink.challange.mapper.costumer.CostumerMapper;
 import br.com.omnilink.challange.model.Costumer;
 import br.com.omnilink.challange.repository.costumer.CostumerRepository;
@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CostumerServiceImpl implements ICostumerService{
+public class CostumerServiceImpl implements ICostumerService {
 
     @Autowired
     CostumerRepository costumerRepository;
@@ -30,7 +30,7 @@ public class CostumerServiceImpl implements ICostumerService{
 
     @Override
     @Transactional
-    public void save(CostumerRequestCreat request) {
+    public void save(CostumerRequest request) {
         logger.info("user: {} action: init save costumer email: " + request.email(), logged.getUsername());
 
         existByEmailOrCnpj(request.email(), request.cnpj());
@@ -64,7 +64,7 @@ public class CostumerServiceImpl implements ICostumerService{
 
     @Override
     @Transactional
-    public void update(CostumerRequestCreat request, Integer id) {
+    public void update(CostumerRequest request, Integer id) {
         logger.info("user: {} - action:  init update costumer id: " + id, logged.getUsername());
 
         findByIdOrThrowObjectNotFoundException(id);

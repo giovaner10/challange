@@ -1,6 +1,6 @@
 package br.com.omnilink.challange.factory;
 
-import br.com.omnilink.challange.DTO.request.vehicle.VehicleRequestCreat;
+import br.com.omnilink.challange.DTO.request.vehicle.VehicleRequest;
 import br.com.omnilink.challange.DTO.response.vehicle.VehicleResponse;
 import br.com.omnilink.challange.enums.vehicle.VehicleBrand;
 import br.com.omnilink.challange.enums.vehicle.VehicleCategory;
@@ -29,8 +29,8 @@ public class VehicleFactory {
                 .build();
     }
 
-    public static VehicleRequestCreat getRequest() {
-        return VehicleRequestCreat.builder()
+    public static VehicleRequest getRequest() {
+        return VehicleRequest.builder()
                 .plate("ABC123")
                 .model("Model X")
                 .modelYear(2023)
