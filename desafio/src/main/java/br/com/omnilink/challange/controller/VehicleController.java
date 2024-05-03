@@ -38,7 +38,7 @@ public class VehicleController {
         return vehicleService.findAll();
     }
 
-    @GetMapping("/findallByCostumer/{id}")
+    @GetMapping("/findallbycostumer/{id}")
     @ResponseStatus(HttpStatus.OK)
     @Cacheable("findAllVehicleByCostumer")
     public List<VehicleResponse> findAllByCostumer(@PathVariable Integer id) {

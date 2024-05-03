@@ -1,0 +1,31 @@
+2024-05-03 08:06:49.748 [INFO ] [main] b.c.o.challange.ChallangeApplication - Starting ChallangeApplication using Java 17.0.11 with PID 13248 (C:\Users\giovane.tiburcio\Desktop\p\desafio\target\classes started by giovane.tiburcio in C:\Users\giovane.tiburcio\Desktop\p)
+2024-05-03 08:06:49.748 [DEBUG] [main] b.c.o.challange.ChallangeApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-03 08:06:49.749 [INFO ] [main] b.c.o.challange.ChallangeApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-03 08:06:57.288 [INFO ] [main] b.c.o.challange.ChallangeApplication - Started ChallangeApplication in 7.846 seconds (process running for 8.275)
+2024-05-03 12:32:24.416 [INFO ] [main] b.c.o.challange.ChallangeApplication - Starting ChallangeApplication using Java 17.0.11 with PID 20608 (C:\Users\giovane.tiburcio\Desktop\p\desafio\target\classes started by giovane.tiburcio in C:\Users\giovane.tiburcio\Desktop\p)
+2024-05-03 12:32:24.417 [DEBUG] [main] b.c.o.challange.ChallangeApplication - Running with Spring Boot v3.2.5, Spring v6.1.6
+2024-05-03 12:32:24.417 [INFO ] [main] b.c.o.challange.ChallangeApplication - No active profile set, falling back to 1 default profile: "default"
+2024-05-03 12:32:31.184 [INFO ] [main] b.c.o.challange.ChallangeApplication - Started ChallangeApplication in 7.032 seconds (process running for 10.223)
+2024-05-03 12:32:56.893 [INFO ] [http-nio-8080-exec-2] b.c.o.c.s.c.CostumerServiceImpl - user: username action: init save costumer email: giovanerrr10@gmail.com
+2024-05-03 12:32:57.035 [INFO ] [http-nio-8080-exec-2] b.c.o.c.s.c.CostumerServiceImpl - user: username - action: finally save costumer email: giovanerrr10@gmail.com
+2024-05-03 12:33:08.723 [INFO ] [http-nio-8080-exec-6] b.c.o.c.s.c.CostumerServiceImpl - user: username - action:  init update costumer id: 1
+2024-05-03 12:33:08.802 [INFO ] [http-nio-8080-exec-6] b.c.o.c.s.c.CostumerServiceImpl - user: username - action: finally update costumer id: 1
+2024-05-03 12:33:20.486 [INFO ] [http-nio-8080-exec-8] b.c.o.c.s.c.CostumerServiceImpl - user: username - action: init delete costumer: 1
+2024-05-03 12:33:20.497 [INFO ] [http-nio-8080-exec-8] b.c.o.c.s.c.CostumerServiceImpl - user: username - action: finally delete costumer: 1
+2024-05-03 12:33:21.799 [INFO ] [http-nio-8080-exec-9] b.c.o.c.s.c.CostumerServiceImpl - user: username - action: init delete costumer: 1
+2024-05-03 12:33:21.800 [ERROR] [http-nio-8080-exec-9] b.c.o.c.s.c.CostumerServiceImpl - user: username - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.model.ObjectNotFoundException
+2024-05-03 12:33:26.799 [INFO ] [http-nio-8080-exec-10] b.c.o.c.s.c.CostumerServiceImpl - user: username action: init save costumer email: giovanerrr10@gmail.com
+2024-05-03 12:33:26.806 [INFO ] [http-nio-8080-exec-10] b.c.o.c.s.c.CostumerServiceImpl - user: username - action: finally save costumer email: giovanerrr10@gmail.com
+2024-05-03 12:34:23.592 [INFO ] [http-nio-8080-exec-2] b.c.o.c.s.vehicle.VehicleServiceImpl - user: username action: init save vehicle plate/user: string/0
+2024-05-03 12:34:43.505 [INFO ] [http-nio-8080-exec-6] b.c.o.c.s.vehicle.VehicleServiceImpl - user: username action: init save vehicle plate/user: string/0
+2024-05-03 12:35:04.717 [INFO ] [http-nio-8080-exec-3] b.c.o.c.s.vehicle.VehicleServiceImpl - user: username action: init save vehicle plate/user: string/0
+2024-05-03 12:35:05.273 [ERROR] [http-nio-8080-exec-3] b.c.o.c.s.c.CostumerServiceImpl - user: username - Fail to find costumer is not present id: 0 - error: class br.com.omnilink.challange.exception.model.ObjectNotFoundException
+2024-05-03 12:35:22.571 [INFO ] [http-nio-8080-exec-9] b.c.o.c.s.vehicle.VehicleServiceImpl - user: username action: init save vehicle plate/user: string/1
+2024-05-03 12:35:23.000 [ERROR] [http-nio-8080-exec-9] b.c.o.c.s.c.CostumerServiceImpl - user: username - Fail to find costumer is not present id: 1 - error: class br.com.omnilink.challange.exception.model.ObjectNotFoundException
+2024-05-03 12:35:28.356 [INFO ] [http-nio-8080-exec-10] b.c.o.c.s.vehicle.VehicleServiceImpl - user: username action: init save vehicle plate/user: string/2
+2024-05-03 12:35:28.460 [INFO ] [http-nio-8080-exec-10] b.c.o.c.s.vehicle.VehicleServiceImpl - user: username action: saved vehicle plate/user: string/2
+2024-05-03 12:37:26.983 [INFO ] [http-nio-8080-exec-5] b.c.o.c.s.vehicle.VehicleServiceImpl - user: username - action: init update vehicle id: 1
+2024-05-03 12:38:23.135 [INFO ] [http-nio-8080-exec-6] b.c.o.c.s.vehicle.VehicleServiceImpl - user: username - action: init update vehicle id: 1
+2024-05-03 12:39:03.854 [INFO ] [http-nio-8080-exec-9] b.c.o.c.s.vehicle.VehicleServiceImpl - user: username - action: init delete vehicle: 1
+2024-05-03 12:39:03.861 [INFO ] [http-nio-8080-exec-9] b.c.o.c.s.vehicle.VehicleServiceImpl - user: username - action: finally delete vehicle: 1
+2024-05-03 12:39:05.491 [INFO ] [http-nio-8080-exec-10] b.c.o.c.s.vehicle.VehicleServiceImpl - user: username - action: init delete vehicle: 1
