@@ -16,10 +16,4 @@ public class ChallangeApplication {
 		SpringApplication.run(ChallangeApplication.class, args);
 	}
 
-	@Bean
-	ApplicationRunner runner(PasswordEncoder passwordEncoder) {
-		return args -> System.out.println(passwordEncoder.encode("password"));
-	}
-
-
 }
